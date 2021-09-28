@@ -1,0 +1,16 @@
+HTML :-HyperText Markup Language.
+It is used to develop webpages.The browser is use to compile the code.
+We use crome,firefox etc to display the output.
+The current version is HTML5.
+This is used to develop static pages only.
+we have predefined tags to develop a page.
+example:-<h1> to <h6> tag for heading
+<html> :- starting tag
+<head> :- it is displayed on the heading.
+<title> :- it is used to display on the title.
+<body> :- it is for the body of the html page.
+<h1><p>
+<table>
+<tr> :- table row
+<td>:- table division
+----------------------------------------------------------------- 
