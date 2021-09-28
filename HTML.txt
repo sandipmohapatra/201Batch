@@ -14,3 +14,12 @@ example:-<h1> to <h6> tag for heading
 <tr> :- table row
 <td>:- table division
 ----------------------------------------------------------------- 
+<input type=text name=t1> :- what ever data we give from the text field it will be binded with t1.it is a varibale we can give any name.It is dynamic and keep changing when when we change the text field data.>
+-------------------------------------------------------------------------------------------
+<input type=checkbox name=t8 value=chess>Chess</tr>
+In this we are hardcoding the value as chess.The value is fixed.
+--------------------------------------------------------------------------------------------
+
+
+
+
