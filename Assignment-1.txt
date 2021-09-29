@@ -1,0 +1,12 @@
+Online Hospital for COVID-19(submit before 1pm)
+----------------------------------------------
+1)Patient Registration
+2)Patient see list of Doctors available(image or name of doctors)
+3)Book an Ambulance
+4)Book a Doctor 
+5)Patient Register for vacine
+6)Feedback page
+
+mail it:-
+sandip7760213015@gmail.com
+------------------------------------------------ 
