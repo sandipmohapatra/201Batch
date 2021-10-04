@@ -1,0 +1,17 @@
+<!-- The this keyword is a reference variable that refers to the current object. -->
+<script>  
+var address=  
+{  
+company:"Mphasis",  
+city:"Bangalore",  
+state:"Karnataka", 
+ 
+fullAddress:function()  
+{  
+return this.company+" "+this.city+" "+this.state;  
+}  
+};  
+var x=address.fullAddress();  
+document.writeln(x);  
+
+</script>  
