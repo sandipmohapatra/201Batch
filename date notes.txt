@@ -1,0 +1,22 @@
+Get the javascript time
+The Date object :-to get the information we need to print out the functions:
+
+getTime() - Number of milliseconds 
+getSeconds() - Number of seconds (0-59)
+getMinutes() - Number of minutes (0-59)
+getHours() - Number of hours (0-23)
+getDay() - Day of the week(0-6). 0 = Sunday, ... , 6 = Saturday
+getDate() - Day of the month (0-31)
+getMonth() - Number of month (0-11)
+getFullYear() - The four digit year 
+-------------------------------------------
+<html>
+<body>
+<script>
+ var date=new Date();
+document.write("the date is "+date.getDate()+"      ");
+document.write("the hour is "+date.getHours()+"  ");
+document.write("the Day is "+date.getDay()+"  ");
+</script>
+</body>
+</html>
