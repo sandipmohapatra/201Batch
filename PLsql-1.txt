@@ -1,0 +1,103 @@
+Trigger:- It is a stored procedure/program which are automatically executed or fired when some event occur.
+we neednot to call a trigger explicitly.
+example :- 
+1)salary posting on 29th of each month
+2)telephone bill generated on the end of a month
+3)credit card bill generation
+etc.....
+Trigger Timing: before,after
+Trigger Event:insert,update,delete
+Trigger will effect a single row at a time.
+
+CREATE OR REPLACE TRIGGER t1 
+BEFORE INSERT ON mphasisemp 
+BEGIN
+IF(TO_CHAR(SYSDATE,'DY')IN('SAT','SUN')) OR 
+(TO_CHAR(SYSDATE,'HH24:MI') NOT BETWEEN '08' AND '15')
+THEN RAISE_APPLICATION_ERROR(-20500,'You may insert into employees table only during business hours');
+END IF;
+END;
+ 
+SELECT * FROM MPHASISEMP;
+
+insert into mphasisemp values(105,'SUNIL','sunil@gmail.com',45000,20,5);
+
+-----------------------------------------------------------------------------------------------------
+CREATE OR REPLACE TRIGGER t11
+BEFORE INSERT OR UPDATE OR DELETE ON mphasisemp 
+BEGIN
+IF(TO_CHAR(SYSDATE,'DY')IN('SAT','SUN')) OR 
+(TO_CHAR(SYSDATE,'HH24:MI') NOT BETWEEN '08' AND '15')
+THEN
+IF DELETING THEN
+RAISE_APPLICATION_ERROR(-20502,'You may delete from employees table only during business hours');
+ELSIF INSERTING THEN
+RAISE_APPLICATION_ERROR(-20500,'You may insert into employees table only during business hours');
+ELSIF UPDATING ('salary') THEN
+RAISE_APPLICATION_ERROR(-20503,'You may update into employees table only during business hours');
+ELSE
+RAISE_APPLICATION_ERROR(-20504,'You may update into employees table only during normal hours');
+END IF;
+END IF;
+END;
+
+
+--------------------------
+
+
+---------------------------------------------------------------
+1)what is a entity?
+table
+2)what is attribute?
+column
+3)what is tuple?
+row
+4)what type of data is in DBMS?
+structured,relational
+5)privlages of view can be in own schema?
+true
+6)privlages of synonym can be in own schema?
+false
+7)what are DML OPERATIONS?
+insert,delete,update
+8)What is normalization use?
+1)reduce redundency
+2)reduce disk size
+9)NVL is used for ?null value to any default value or zero.
+10)% is used for ---------- and -------------?like and not like
+11)which type of normalization is used for removing transient dependency?
+3NF
+12)where is having clause used?
+in group by  queries
+13)where is where clause used?
+select only rows
+14)object oriented programming doesnot follow M:M relationship.(TRUE)
+15)DBMS-RBBMS follow how many codd rules?6 rules.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
