@@ -1,0 +1,74 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-test',
+  template:`
+  <p>Hello my name is {{name}}</p>
+  <p>Hello my email is {{email}}</p>
+  <p>Hello my address is {{address.street}} {{address.loc}} 
+  {{address.state}}{{address.city}}</p>
+<p><Button (click)="sayName()">Say My Details</Button></p> 
+<p><Button (click)="sayDetails()">Say My Profile</Button></p> 
+<p><Button (click)="toggleHobbies()">
+{{showHobbies ? "Hide Hobbies" :"show hobbies"}}</Button></p> 
+<div *ngIf="showHobbies">
+<h3>My Hobbies are </h3>{{hobbies}}
+<h3>My Daily Foods are </h3>
+<ul>
+<li *ngFor="let food of foods">
+{{food}}
+</li>
+</ul>
+</div>
+`
+})
+export class TestComponent {
+name:string;
+email:string;
+address:address;
+hobbies:string[];
+foods:string[];
+showHobbies:any;
+  constructor() 
+  {
+this.name='Sandip Mohapatra';
+this.email='sandip@gmail.com';
+this.address=
+{
+  street:101,
+  loc:'Sivaji Nagar',
+  state:'Karnataka',
+  city:'Bangalore'
+}
+this.hobbies=['music','cricket','football','movies','sports'];
+this.foods=['Biryani','rice and dal','noodles','ice-cream'];
+   }
+sayName()
+{
+  console.log("My name is",this.name);
+  console.log("My email is",this.email);
+  console.log("My address is",this.address);
+  }
+  sayDetails()
+  {
+    this.sayName();
+  }
+  toggleHobbies()
+  {
+    if(this.showHobbies==true)
+    {
+      this.showHobbies=false;
+    }
+    else
+    {
+      this.showHobbies=true;
+    }
+  }
+ }
+ interface address
+  {
+   street:number;
+   loc:string;
+   state:string;
+   city:string; 
+  }
