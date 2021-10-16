@@ -3,7 +3,7 @@ Angular 8/9/10
 1)Angular is an open source,cross platform,
 2)it provides end to end solution for building,debugging,testing and deploying.
 3)it provides testing framework like jasmine,karma,protractor.
-4)language used for angular is typescript.It support oops.
+4)language used for angular is typescript.It support oops.(javascript-var)
 5)Framework supported are MVC,MVVM
 6)it is also used for cross flatform mobile and web appliaction.
 7)it is used for SPA (single page application) .
@@ -22,7 +22,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 steps for Installation
 --------------------------------------
 1)npm install -g @angular/cli
-2)C:\projects-workspace> ng new amazon
+2)C:\projects-workspace>ng new batch201
 3)C:\projects-workspace\amazon>ng serve 
 4)Browser- Application starts on Live Server listening on http://localhost:4200
 To create subfolders
@@ -129,8 +129,8 @@ export class OnewayComponent
 {
 public product=
 {
-Name='Samsung TV',
-Price:45000.44;
+Name:'Samsung TV',
+Price:45000.44,
 }}
 ----------------------------------------------------
 <dl>
