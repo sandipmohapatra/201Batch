@@ -1,0 +1,1172 @@
+First step  :-
+-----------------
+we have to download node.js 
+--------------------------------------------------------------
+1)npm install -g typescript@latest
+--------------------------------------------------------------
+Example-1
+
+1. Create a new TypeScript file
+"welcome.ts"
+ console.log("Welcome to TypeScript");
+ console.log("Hello ! World");
+2. Compile in Terminal
+>tsc welcome.ts
+3. Run the JavaScript file
+>node welcome.js
+
+----------------------------------------------------------------
+Example-2
+
+ function f1() {
+ var x = 10; → Initialized
+ if(x==10) 
+{
+ var y; // Declared
+ y=20; // Assigned / Rendered
+ }
+ console.log(`x=${x}\n y=${y}`); //y is valid as it is declared as function scope with var
+}
+f1();
+-----------------------------------------------------------------------
+Example-3
+
+function f1() {
+  var x = 10;
+  if(x==10) {
+      var y=20;
+      var y=30;	// y - shadowing
+  }
+  console.log(`x=${x}\n y=${y}`);
+}
+f1();
+-----------------------------------------------------------------------------
+Example-4
+
+function f1() {
+  x = 10;
+  console.log(`x=${x}`);
+  var x;		// x is hoisted
+}
+f1();
+---------------------------------------------------------------------
+Example-5
+
+function f1() {
+    x = 20;
+    console.log(`x=${x}`);
+    let x;	// invalid
+  }
+  f1();
+-------------------------------------------------------------
+STRING
+---------------------------
+Example-6
+
+let username:string = "John"
+let age:number = 20;
+console.log("Hello !"+ " " + username+" "+"You will be"+ " " + (age+1) + " " +"Next Year");
+console.log(`Hello ! ${username} You will be ${age+1} Next Year`);
+
+-----------------------------------------------------------------
+Example-7
+
+let username:string = "john";
+let firstCharCode:number = username.charCodeAt(0);
+if(firstCharCode>=65 && firstCharCode<=90){
+    console.log(`Hello ! ${username}`);
+} else {
+    console.error(`Error: Name must start with UpperCase Letter`);
+}
+----------------------------------------------------------------------
+Example-8
+
+let className:string = 'bg-primary';
+if(className.startsWith("form")) {
+    console.log(`You Defined a Form Class`);
+} else if(className.startsWith("btn")) {
+    console.log(`You Defined a Button Class`);
+} else {
+    console.log(`You are using Miscelaneous class ${className}`);
+}
+------------------------------------------------------------------------------
+Example-9
+
+let className:string = 'text-primary';
+if(className.endsWith("center")) {
+    console.log(`You Defined an Alignment Class`);
+} else if(className.endsWith("primary")) {
+    console.log(`You Defined Contextual Class`);
+} else {
+    console.log(`You are using Miscelaneous class ${className}`);
+}
+--------------------------------------------------------------------
+Example-10
+
+let email:string = "john@gmail.com";
+if(email.indexOf("@")==-1) {
+    console.error(`Error: Invalid email [@ Missing]`);
+} else {
+    console.log(`Your email ${email} Verified..`);
+}
+-------------------------------------------------------------
+Example-11
+
+let msg:string = "Welcome to JavaScript String Methods.";
+if(msg.includes("TypeScript")){
+    console.log(`You are using TypeScript`);
+} else if(msg.includes("JavaScript")) {
+    console.log(`You are using JavaScript`);
+}
+---------------------------------------------------------------------
+Example-12
+
+let msg:string = "Welcome to javaScript. You are learning javaScript String Methods.";
+console.log(msg);
+let newString:string = msg.replace(/javascript/gi, "TypeScript");
+console.log(newString);
+-------------------------------------------------------------------
+Example-13
+
+let mobile:string = "+919876543210";
+let regExp:any = /\+91[0-9]{10}/;
+if(mobile.match(regExp)) {
+    console.log(`Your Mobile ${mobile} Verified`);
+} else {
+    console.log(`Invalid Mobile:+91 with 10 digits`);
+}
+-----------------------------------------------------------------------------
+Example-14
+
+let word:string = "color";
+let regExp:any = /colou?r/;
+if(word.match(regExp)){
+    console.log(`Your Spelling ${word} is Valid`);
+} else {
+    console.log(`Your Spelling ${word} is incorrect [color or colour] is valid`);
+}
+-----------------------------------------------------------------------------------
+Example-15
+
+// Password 4 to 15 chars alpha numberic with at least 1 uppercase letter
+let password:string = "john123G";
+let regExp:any = /(?=.*[A-Z])\w{4,15}/;
+if(password.match(regExp)) {
+    console.log(`${password} - Strong Password`);
+} else {
+    if(password.length<4) {
+        console.log(`${password} - Poor Password`);
+    } else {
+        console.log(`${password} - Weak Password`);
+    }
+}
+---------------------------------------------------------------------------------------
+Example-16
+
+let msg:string = "SamsungTV,45000.55,InStock";
+let data:string[] = msg.split(',');
+for(var value of data) {
+    console.log(value);
+}
+console.log(`Name=${data[0]}`);
+------------------------------------------------------------------------------
+Example-17
+
+let password:string = " john ";
+if(password.trim()=="john")
+{
+    console.log('Verified..');
+} else {
+    console.log('Invalid Password');
+}
+-----------------------------------------------------------
+Example-18
+
+let Name:string = "Samsung TV";
+let Price:number = 45000.55;
+let isInStock:boolean = true;
+console.log(`Name=${Name}\nPrice=${Price}\nStock=${(isInStock==true)?"Available":"Out of Stock"}`);
+
+-------------------------------------------------------------------------------------
+Example-19
+
+let page:string ="about.html";
+let msg:string|number;
+if(page=="home.html"){
+   msg=`You requested for ${page} page`;
+} else {
+    msg = 404;
+}
+if(msg==400) {
+    msg = "Bad Request";
+} else if (msg==404) {
+    msg = "Not Found";
+}
+console.log(msg);
+---------------------------------------------------------------
+Example-20
+
+let Name:string = "Samsung TV";
+let Price:number|undefined=50000.34;
+if(Price==undefined) {
+    console.log(`Name=${Name}`);
+} else {
+    console.log(`Name=${Name}\nPrice=${Price}`);
+}
+-------------------------------------------------------------------------
+Example-21
+
+let userName:string|null = prompt("Enter Name");
+if(userName==null) {
+    document.write(`You Canceled..`);
+} else if(userName=="") {
+    document.write(`Name can't be Empty`);
+} else {
+    document.write(`Hello ! ${userName}`);
+}
+------------------------------------------------------------------------------
+<head>
+      <script src="example21.js"> </script>
+</head>
+----------------------------------------------------------------------
+ARRAY
+----------------
+Example-22
+
+let values:number[] = [];
+values["0"]=30;
+values["1"]=50;
+console.log(values["1"]);
+---------------------------------------------------------------------------
+Example-23
+
+let values:any[] = new Array();
+values[0]= 10;
+values[1]= "A";
+values[2]= true;
+console.log(`${values[0]}\n${values[1]}\n${values[2]}`);
+-----------------------------------------------------------------------------------
+Example-24
+
+let newArray:any[] = [0,"",true,[],function(){}];
+newArray[0] = 10;
+newArray[1] = "John";
+newArray[2] = true;
+newArray[3] = ["A", "B"];
+newArray[4] = function(){
+    console.log("Function in Array");
+};
+for(var item of newArray[3]) {
+    console.log(item);
+}
+newArray[4]();
+------------------------------------------------------------------
+Example-25
+
+let products:string[] = ["TV","Mobile","Shoe"];
+console.log(`To String: ${products.toString()}`);
+console.log(`Join : ${products.join("-->")}`);
+console.log(`Slice : ${products.slice(1,2)}`);
+----------------------------------------------------------------------------
+Example-26
+
+let categories:string[] = ["Electronics","Fashion"];
+function PrintList(){
+    for(var property in categories) {
+        console.log(`${property}:${categories[property]}`);
+    }
+}
+PrintList();
+categories.splice(1,0,"Mobiles","Footwear");
+console.log(`---New Categories Added----`);
+PrintList();
+------------------------------------------------------------------------------
+Example-27
+
+let products:string[] = ["TV","Mobile","Shoe"];
+console.log(`To String: ${products.toString()}`);
+console.log(`Join : ${products.join("-->")}`);
+console.log(`Slice : ${products.slice(1,2)}`);
+------------------------------------------------------------------------------
+Example-28
+
+let categories:string[] = ["Electronics","Fashion","Footwear"];
+function PrintList(){
+    for(var property in categories) {
+        console.log(`${property}:${categories[property]}`);
+    }
+}
+PrintList();
+let removedItem:string = categories.pop();
+console.log(`${removedItem} Removed From Collection`);
+PrintList();
+----------------------------------------------------------------------------------
+Example-29
+
+let categories:string[] = ["Electronics","Fashion","Footwear"];
+function PrintList(){
+    for(var property in categories) {
+        console.log(`${property}:${categories[property]}`);
+    }
+}
+PrintList();
+let removedItem:string = categories.shift();
+console.log(`${removedItem} Removed From Collection`);
+PrintList();
+------------------------------------------------------------
+Example-30
+
+let categories:string[] = ["Electronics","Fashion","Footwear"];
+
+function PrintList(){
+    for(var property in categories) {
+        console.log(`${property}:${categories[property]}`);
+    }
+}
+PrintList();
+let removedItem:string[] = categories.splice(1,1);
+console.log(`${removedItem[0]} Removed From Collection`);
+PrintList();
+-------------------------------------------------------------------
+Example-31
+
+let values:string[] = ["A","D","C","B"];
+function PrintList(){
+    for(var property in values) {
+        console.log(`${property}:${values[property]}`);
+    }
+}
+PrintList();
+values.sort();
+values.reverse();
+console.log(`------Sorted List-----`);
+PrintList();
+---------------------------------------------------------------
+Example-32
+
+let values:number[] = [10, 20, 30];
+let [a,b,c] = values;
+console.log(`A=${a}\nB=${b}\nC=${c}`);
+----------------------------------------------------------------------
+Example-33
+
+let Factory:any[] = [function(a,b){return a+b},function(a,b){return a*b}];
+let [Add, Mul] = Factory;
+console.log(`Addition=${Add(10,20)}\nMultiply=${Mul(5,4)}`);
+-----------------------------------------------------------------------
+Example-34
+
+let product:object = {
+    Name:"",
+    Price:0,
+    InStock:true,
+    Qty:0,
+    Total:function(){
+        return this.Qty * this.Price;
+    },
+    Print:function(){
+        console.log(`Name=${this.Name}\nPrice=${this.Price}\nStock=${(this.InStock==true)?"Available":"Out of Stock"}\nQty=${this.Qty}\nTotal=${this.Total()}`);
+    }
+}
+product.Name = "Samsung TV";
+product.Price = 34000.55;
+product.Qty = 2;
+product.InStock = true;
+product.Print();
+console.log(`----------------`);
+product.Name = "Nike Casuals";
+product.Price = 3000.55;
+product.Qty = 3;
+product.InStock = false;
+product.Print();
+-----------------------------------------------------------------------
+Example-35
+
+let data:any[] = [
+    {Name: "TV", Price: 30000.44, Category: "Electronics"},
+    {Name: "Shirt", Price:3100.33, Category: "Fashion"},
+    {Name: "Mobile", Price:12000.33, Category: "Electronics"},
+    {Name: "Nike Casuals", Price: 5000.55, Category: "Footwear"}
+];
+let searchResults:any[] = data.filter(function(obj){
+    return obj.Category=="Electronics" || obj.Category=="Fashion";
+})
+for(var obj of searchResults) {
+    console.log(`${obj.Name} - ${obj.Price}`);
+}
+----------------------------------------------------------------------------
+Example-36
+
+let data:any[] = [
+    {Name: "TV", Price: 30000.44, Category: "Electronics"},
+    {Name: "Shirt", Price:3100.33, Category: "Fashion"},
+    {Name: "Mobile", Price:12000.33, Category: "Electronics"},
+    {Name: "Nike Casuals", Price: 5000.55, Category: "Footwear"}
+];
+let searchResults:any[] = data.filter(obj=>obj.Category=="Electronics");
+
+for(var obj of searchResults) {
+    console.log(`${obj.Name} - ${obj.Price}`);
+}
+----------------------------------------------------------------------------------------
+Example-37
+
+let data:any[] = [
+    {Name: "TV", Price: 30000.44, Category: "Electronics", ShippedTo: ["Delhi","Hyd"]},
+    {Name: "Shirt", Price:3100.33, Category: "Fashion", ShippedTo: ["Hyd","Mumbai"]},
+    {Name: "Mobile", Price:12000.33, Category: "Electronics", ShippedTo:["Chennai","Hyd"]},
+    {Name: "Nike Casuals", Price: 5000.55, Category: "Footwear", ShippedTo: ["Hyd","Mumbai"]}
+];
+let searchResults:any[] = data.filter(obj=>obj.Category=="Electronics");
+
+for(var obj of searchResults) {
+    console.log(`${obj.Name} - ${obj.Price} - ${obj.ShippedTo.toString()}`);
+}
+--------------------------------------------------------------------------------------------
+Example-38
+
+let data:any[] = [
+    [{Name:"TV", Price:30045.55}],
+    [{Name:"Shirt", Price:5600.55}]
+];
+console.log(data[1][0].Price);
+--------------------------------------------------------------------
+Example-39
+
+let Mfd:any = new Date("2020-03-22");
+
+let weekdays:string[] = ["Sunday","Mon","Tue","Wed","Thu","Fri","Sat"];
+let months:string[] = ["January","Feb","March","April","May","June"];
+
+console.log(`Manufactured Month=${months[Mfd.getMonth()]}\nWeekDay=${weekdays[Mfd.getDay()]}\nYear=${Mfd.getFullYear()}`);
+console.log(`Manufactured=${Mfd.toDateString()}`);
+----------------------------------------------------------------------------------
+Example-40
+
+let Mfd:any = new Date("2020-03-22");
+
+let weekdays:string[] = ["Sunday","Mon","Tue","Wed","Thu","Fri","Sat"];
+let months:string[] = ["January","Feb","March","April","May","June"];
+Mfd.setFullYear(2021);
+Mfd.setMonth(5);
+console.log(`Manufactured Month=${months[Mfd.getMonth()]}\nWeekDay=${weekdays[Mfd.getDay()]}\nYear=${Mfd.getFullYear()}`);
+console.log(`Manufactured=${Mfd.toDateString()}`);
+-------------------------------------------------------------------------------
+Example-41
+
+let product:any = {
+    Name: "Samsung TV",
+    Price: 45000.55,
+    InStock:true,
+    ShippedTo: ["Delhi","Hyd"],
+    Total: function(){},
+    Mfd: new Date()
+}
+console.log(`Name is ${typeof product.Name}\n Price is ${typeof product.Price}\n InStock is ${typeof product.InStock}\n ShippedTo is ${typeof product.ShippedTo}\nTotal is ${typeof product.Total}\n Mfd is ${typeof product.Mfd} `);
+------------------------------------------------------------------------------
+Example-42
+
+class Employee {
+
+}
+let emp = new Employee();
+let product = new Array();
+console.log(`emp is instance of Array ? ${emp instanceof Array}\nemp instance of Employee ? ${emp instanceof Employee}\n Product instance of Array ? ${product instanceof Array}\nProduct instance of Object? ${product instanceof Object}`);
+---------------------------------------------------------------------------------
+Example-43
+
+let product:any = {
+    Name: "TV",
+    Price: 34000.44
+};
+delete product.Price;
+if(product.Price==undefined) {
+    console.log(`Name=${product.Name}`);
+} else {
+console.log(`Name=${product.Name}\nPrice=${product.Price}`);
+}
+--------------------------------------------------------------------
+Example-44
+
+let products:string[] = ["TV","Mobile","Shoe"];
+let data:any[] = [
+    {Name: "TV", Price: 45000.55},
+    {Name: "Mobile", Prie: 30000.44}
+];
+for(var product of products) {
+    console.log(product);
+}
+for(var item of data) {
+    console.log(item);
+}
+-------------------------------------------------------------------------
+Example-45
+
+interface IProduct
+{
+   Name:string;
+   Price:number;
+   Qty:number;
+   Total():number;
+}
+let product:IProduct = {
+    Name:"TV",
+    Price:34000.44,
+    Qty:3,
+    Total: function(){
+        return this.Qty*this.Price;
+    }
+}
+console.log(`Name=${product.Name}\nPrice=${product.Price}\nQty=${product.Qty}\nTotal=${product.Total()}`)
+--------------------------------------------------------------------------------
+Example-46
+
+interface IProduct
+{
+   Name:string;
+   Price:number;
+   Qty:number;
+   Vendor?:string;
+   Total():number;
+}
+let tv:IProduct = {
+    Name:"TV",
+    Price:34000.44,
+    Qty:3,
+    Total: function(){
+        return this.Qty*this.Price;
+    }
+}
+let mobile:IProduct = {
+    Name:"Mobile",
+    Price:12000.44,
+    Qty:2,
+    Vendor: "Samsung",
+    Total: function(){
+        return this.Qty*this.Price;
+    }
+}
+function Print(obj) {
+    console.log(`Name=${obj.Name}\nPrice=${obj.Price}\nQty=${obj.Qty}\nTotal=${obj.Total()}\nVendor=${(obj.Vendor==undefined)?"Anonymous Vendor":obj.Vendor}`);
+}
+Print(tv);
+Print(mobile);
+----------------------------------------------------------------------------
+Example-47
+
+interface IModel {
+    ModelName:string;
+}
+interface IMemory extends IModel {
+    RAMsize:string;
+}
+interface ICamera extends IMemory {
+    Mpx:string;
+}
+interface IMobile extends ICamera {
+    Print():void;
+}
+let mob:IMobile = {
+    ModelName: "Samsung",
+    RAMsize: "8GB",
+    Mpx:"20px",
+    Print:function (){
+        console.log(`Name=${this.ModelName}\nRAM=${this.RAMsize}\nCamera=${this.Mpx}`);
+    }    
+}
+mob.Print();
+-----------------------------------------------------------------
+Example-48
+
+interface IModel {
+    ModelName:string;
+}
+interface IMemory {
+    RAMsize:string;
+}
+interface ICamera {
+    Mpx:string;
+}
+interface IMobile extends IModel, IMemory, ICamera {
+    Print():void;
+}
+let mob:IMobile = {
+    ModelName: "LG",
+    RAMsize: "8GB",
+    Mpx:"20px",
+    Print:function (){
+        console.log(`Name=${this.ModelName}\nRAM=${this.RAMsize}\nCamera=${this.Mpx}`);
+    }    
+}
+mob.Print();
+------------------------------------------------------------
+Example-49
+
+class Demo {
+    static s=0;
+    n=0;
+    constructor(){
+        Demo.s = Demo.s + 1;
+        this.n = this.n + 1;
+    }
+    Print(){
+        console.log(`s=${Demo.s}  n=${this.n}`);
+    }
+}
+let obj1 = new Demo;
+obj1.Print();
+let obj2 = new Demo;
+obj2.Print();
+let obj3 = new Demo;
+obj3.Print();
+---------------------------------------------------------
+Example-50
+
+let password:string = "admin123";
+class Product {
+    private _productName:string;
+
+    get ProductName():string {
+        return this._productName;
+    }
+    set ProductName(newName:string) {
+        if(password && password=="admin123") {
+            this._productName = newName;
+        } else {
+            console.log(`UnAuthorized : You are not authorized to set Product Name`);
+        }
+    }
+}
+let tv = new Product();
+tv.ProductName = "Samsung TV";
+if(tv.ProductName==undefined) {
+    console.log(`Name is Readonly for this User`);
+} else {
+console.log(`Name = ${tv.ProductName}`);
+}
+------------------------------------------------------------------------------
+Example-51
+
+class Database
+{
+    constructor(){
+        console.log(`Connected to Database`);
+    }
+    public Insert(){
+        console.log(`Record Inserted..`);
+    }
+}
+let oracle = new Database;
+oracle.Insert();
+
+-------------------------------------------------------------
+Example-52
+
+class Database
+{
+    constructor(dbName?:string){
+        if(dbName==undefined){
+            console.log(`Connected to Unknown Database..`);
+        } else {
+        console.log(`Connected to ${dbName} Database`);
+        }
+    }
+    public Insert(){
+        console.log(`Record Inserted..`);
+    }
+}
+let oracle = new Database("Oracle");
+oracle.Insert();
+--------------------------------------------------------------------------
+Example-53
+
+function Print(){
+  console.log(`Print Function`);
+}
+class Demo {
+  	Print() {     // method
+      console.log('Print Method');
+      Print();  // function call
+  }
+}
+let obj = new Demo();
+obj.Print();
+---------------------------------------------------------------------------------
+Example-54
+
+let products:any = [
+    {Name:"Samsung TV", Category:"Electronics"},
+    {Name:"Nike Casuals", Category:"Footwear"},
+    {Name:"Speakers", Category: "Electronics"},
+    {Name:"Mobile", Category: "Electronics"}
+];
+
+let results = products.filter(product=>product.Category=="Electronics"&&product.Name=="Mobile");
+let electronicsCount:number = products.filter(product=>product.Category=="Electronics"&&product.Name=="Mobile").length;
+for(var item of results){
+    console.log(item.Name);
+}
+console.log(`Total No of Electronic Products : ${electronicsCount}`);
+
+-------------------------------------------------------------------------------------------
+Example-55
+
+function Product(Name:string, Price?:number){
+    if(Price==undefined) {
+        console.log(`Name=${Name}`);
+    } else {
+   console.log(`Name=${Name}\nPrice=${Price}`);
+    }
+}
+Product("Samsung TV");  
+console.log(`--------------`);
+Product("Mobile", 12000);
+--------------------------------------------------------------------------
+Example-56
+
+function PrintList(list:string[]){
+    for(var item of list) {
+        console.log(item);
+    }
+}
+PrintList(['TV', 'Mobile']);
+console.log(`--------------`);
+PrintList(new Array('Shoe','Watch'));
+console.log(`--------------`);
+let categories:string[] = ['Electronics', 'Footwear'];
+PrintList(categories);
+-------------------------------------------------------------------------------------
+Example-57
+
+function PrintList(list:string[], sales:number[], count:number){
+    for(var item of list) {
+        console.log(item);
+    }
+    for(var sale of sales){
+        console.log(sale);
+    }
+    console.log(`Count = ${count}`)
+}
+PrintList(['A','B'],[10,20],2);
+-------------------------------------------------------------------------------------
+Example-58
+
+function PrintList(count:number, ...list:any) {
+    for(var item of list) {
+        console.log(item);
+    }
+    console.log(`Count=${count}`);
+}
+PrintList(2,"TV",true)
+---------------------------------------------------------------------
+Example-59
+
+function PrintList(obj:any) {
+    for(var property in obj) {
+        console.log(`${property} : ${obj[property]}`)
+    }
+}
+PrintList({Name:'TV', Price:45000});
+-------------------------------------------------------------------------------
+Example-60
+
+let pwd:string = "admin123";
+function PrintList(success:any, failure:any) {
+    if(pwd=="admin12"){
+        success();
+    } else {
+        failure();
+    }
+}
+PrintList(function(){
+    console.log('Login success..');
+}, function(){
+    console.log('Invalid Password');
+})
+
+------------------------------------------------------------------------------------
+Example-61
+
+function Message(str):string {
+    return str.toUpperCase();
+}
+function power(x,y):number {
+    return Math.pow(x,y);
+}
+let msg:string = Message("Welcome to TypeScript");
+let pow:number = power(2,3);
+console.log(msg);
+console.log(pow);
+-------------------------------------------------------------------------
+Example-62
+
+function PrintMessage():void{
+   console.log("Welcome to TypeScript");
+   console.log("This is second line");
+   console.log("This is incomplete don't execute");
+   return;
+   console.log("This is pending");
+}
+PrintMessage();
+--------------------------------------------------------------------------------
+Example-63
+
+function Demo(param):number | string {
+    if((typeof param)=="number") {
+        return param + 1;
+    } else {
+        return `Your Message : ${param}`;
+    }
+}
+console.log(Demo(10));
+console.log(Demo("Welcome to TypeScript"));
+----------------------------------------------------------------------------------------
+Example-64
+
+function fact(n){
+    if(n==0){
+        return 1;
+    } else {
+        return n * fact(n-1);
+    }
+}
+console.log(`Factorial of 5 is ${fact(5)}`);
+--------------------------------------------------------------------------------------------
+Example-65
+
+class Employee {
+    public FirstName:string;
+    public LastName:string;
+    public Designation:string;
+    public Print(){
+        console.log(`${this.FirstName} ${this.LastName} - ${this.Designation}`);
+    }
+}
+class Developer extends Employee {
+    public Print(){
+        super.FirstName = "Raj";
+        super.LastName = "Kumar";
+        super.Designation = "Developer";
+        super.Print();
+    }
+}
+class Admin extends Employee {
+    public Print(){
+        super.FirstName = "Kiran";
+        super.LastName = "Kumar";
+        super.Designation = "Admin";
+        super.Print();
+    }
+}
+class Manager extends Employee {
+    public Print(){
+        super.FirstName = "Tom";
+        super.LastName = "Hanks";
+        super.Designation = "Manager";
+        super.Print();
+    }
+}
+let employees:Employee[] = new Array(new Developer(), new Admin(), new Manager());
+for(var emp of employees) {
+    emp.Print();
+}
+-----------------------------------------------------------------------------------
+Example-66
+
+class Employee {
+    public FirstName:string;
+    public LastName:string;
+    public Designation:string;
+    public Print(){
+        console.log(`${this.FirstName} ${this.LastName} - ${this.Designation}`);
+    }
+}
+class Developer extends Employee {
+    public Print(){
+        super.FirstName = "Raj";
+        super.LastName = "Kumar";
+        super.Designation = "Developer";
+        super.Print();
+    }
+}
+class Admin extends Employee {
+    public Print(){
+        super.FirstName = "Kiran";
+        super.LastName = "Kumar";
+        super.Designation = "Admin";
+        super.Print();
+    }
+}
+class Manager extends Employee {
+    public Print(){
+        super.FirstName = "Tom";
+        super.LastName = "Hanks";
+        super.Designation = "Manager";
+        super.Print();
+    }
+}
+let employees:Employee[] = new Array();
+employees[0]= new Developer();
+employees[1]= new Admin();
+employees[2] = new Manager();
+for(var emp of employees) {
+    emp.Print();
+}
+-------------------------------------------------------------------------------------------
+Example-67
+
+class Calculator {
+    public  calculate(num1: number, num2: number): void{};
+    public static calculateTest(num1: number, num2: number, type: string) {
+        let objs: Calculator[] = new Array();
+        objs[0] = new Addtion();
+        objs[1] = new Mul();
+        let [add, mul] = objs;
+        let obj = eval(type);
+        obj.calculate(num1, num2);
+    }
+}
+class Addtion extends Calculator {
+    public calculate(num1: number, num2: number): void {
+        console.log(num1 + num2);
+    }
+}
+class Mul extends Calculator {
+    public calculate(num1: number, num2: number): void {
+        console.log(num1 * num2);
+    }
+}
+Calculator.calculateTest(5, 7, "mul");
+Calculator.calculateTest(5, 7, "add");
+---------------------------------------------------------------------------------------------
+Example-68
+
+function PrintValue<T>(param:T):T {
+    return param;
+}
+console.log(PrintValue<string>("String Value"));
+console.log(PrintValue<number>(10));
+---------------------------------------------------------------------------
+Example-69
+
+function Sum(a:any, b:any) {
+    return a+b;
+}
+function Concat(a:any, b:any) {
+    return `First Name=${a}\nLast Name=${b}`;
+}
+
+function PrintValue<T>(a:T, b:T):any{
+    if((typeof a)=="number" && (typeof b=="number")){
+        return Sum(a,b);
+    } else {
+        return Concat(a,b);
+    }
+}
+console.log(PrintValue<number>(10,20));
+console.log(PrintValue<string>("Tom","Hanks"));
+------------------------------------------------------------------------------------
+Example-70
+
+interface IProduct {
+    Name:string;
+    Price:number;
+    InStock:boolean;
+}
+interface IEmployee {
+    Name: string;
+    Designation:string;
+}
+function GetData<T>(obj:T) {
+    for(var property in obj) {
+        console.log(`${property} : ${obj[property]}`);
+    }
+}
+console.log(`Product Details:`);
+GetData<IProduct>({Name: 'TV', Price: 34000.44, InStock: true});
+console.log(`----------------`);
+GetData<IEmployee>({Name: 'John', Designation: 'Manager'});
+-------------------------------------------------------------------------------------
+Example-71
+
+interface IProduct {
+    Name:string;
+    Price:number;
+    InStock:boolean;
+}
+function GetData<T>(obj:T) {
+    if(obj instanceof Array){
+        for(var item of obj) {
+            console.log(item);
+        }
+    } else {
+        for(var property in obj){
+            console.log(`${property} : ${obj[property]}`);
+        }
+    }
+}
+let product:IProduct = {
+    Name: 'Nike Casuals',
+    Price: 3400.44,
+    InStock: true
+};
+
+let products:IProduct[] = [
+    {Name: "TV", Price: 45000.55, InStock:true},
+    {Name: "Mobile", Price: 12000.33, InStock:false}
+];
+console.log(`Products List:`);
+GetData<IProduct[]>(products);
+console.log(`--------------`);
+GetData<IProduct>(product);
+------------------------------------------------------------------------------------
+Example-72
+
+class Demo<T> {
+    value:T;
+    add:(x:T, y:T)=>T;
+}
+let obj = new Demo<number>();
+obj.value = 10;
+obj.add = function(x, y) { return x + y };
+console.log(`Number=${obj.value}`);
+console.log(`Addition=${obj.add(10,20)}`);
+
+let obj2 = new Demo<string>();
+obj2.value = "Hello !";
+obj2.add = function(x, y) { return `${x} ${y}`};
+console.log(obj2.value);
+console.log(obj2.add("Raj", "Kumar"));
+-----------------------------------------------------------------------------
+Example-73
+
+class Oracle {
+    connection:string;
+    query:string;
+    connectionState:string;
+}
+class MongoDb {
+    connection:string;
+    command:string;
+}
+class DataSource<T> {
+    connection:T;
+}
+let ora = new DataSource<Oracle>();
+ora.connection = {connection:"OracleConnection", query:"Select * from tblproducts", connectionState:"Connected"};
+console.log(`Provider=${ora.connection.connection}\nQuery=${ora.connection.query}\nConnection State=${ora.connection.connectionState}`);
+
+console.log(`--------------------`)
+let mongo = new DataSource<MongoDb>();
+mongo.connection = { connection:"Mongoose", command: "db.tblproducts.insert()" };
+console.log(`Provider=${mongo.connection.connection}\nCommand=${mongo.connection.command}`);
+--------------------------------------------------------------------------
+Example-74
+
+let product = new Map([
+    [1, "Samsung TV"],
+    [2, "Nike Causuals"]
+]);
+console.log(product.get(1));       
+console.log(product.size); 
+product.delete(1);
+product.has(3);         
+---------------------------------------------------------------------
+Example-75
+
+let product = new Map([
+    [1, "Samsung TV"],
+    [2, "Nike Causuals"]
+]);
+// read all keys
+console.log(`-------Keys---------`);
+for(let key of Array.from(product.keys())){
+    console.log(key);
+}
+//read all values
+console.log(`-------Values-------`);
+for(let value of Array.from(product.values())){
+    console.log(value);
+}
+//read all entries
+console.log(`--------Entries-------`);
+for(let entry of Array.from(product.entries())){
+    console.log(entry);
+}
+-------------------------------------------------------------------
+Example-76
+
+interface CustomArray {
+    [index:number]:string;
+}
+let products: CustomArray;
+products = ["TV", "Mobile"];
+console.log(products[0]);
+-------------------------------------------------------------
+Example-77
+
+enum ErrorCodes 
+{
+    OK = 200,
+    Created = 201,
+    Accepted = 202,
+    NonAuthorative = 203,
+    NoContent
+}
+console.log(`NoContent Status Code: ${ErrorCodes.NoContent}`);           
+----------------------------------------------------------
+Example-78
+
+enum Play 
+{
+    Last,			// valid - 0
+    Next = "Next Song",
+    Prev = "Previous Song",
+    First = "First Song"
+}
+console.log(`Last Value ${Play.Last}`);
+console.log(`Prev : ${Play.Prev}`);
+-----------------------------------------------------------------------
+Example-79
+
+enum ErrorCode 
+{
+    NotFound = 404
+}
+let a = ErrorCode.NotFound;
+console.log(`a = ${a}`);
+let statusText = ErrorCode[a]; // revers mapping
+console.log(`Status Text= ${statusText}`);
+---------------------------------------------------------------------------------
+Example-80
+
+interface IProduct 
+{
+    Name:string;
+    Price:number;
+    Qty:number;
+    Total():number;
+    Print():void;
+}
+abstract class ProductTemplate implements IProduct
+{
+    public Name:string;
+    public Price:number;
+    public Qty:number;
+    public Total():number {
+        return this.Qty * this.Price;
+    }
+    public abstract Print():void;
+}
+class Product extends ProductTemplate
+{
+    public Print():void {
+        super.Name = "TV";
+        super.Price = 34500.55;
+        super.Qty = 2;
+        console.log(`Name=${super.Name}\nPrice=${super.Price}\nQty=${super.Qty}\nTotal=${super.Total()}`);
+    }
+}
+let tv = new Product();
+tv.Print();
+----------------------------------------------------------------------------------------------
