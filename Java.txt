@@ -89,8 +89,24 @@ System.out.println("the value of h is "+h);
 }
 }
 -----------------------------------
-
-
+*in java we have default package ie lang package.
+example 2:-
+----------------------------------
+package batch201;
+import java.lang.*;
+import java.util.*;
+public class First 
+{
+public static void main(String[] args)
+{
+Scanner obj=new Scanner(System.in);
+System.out.println("enter 2 nos");	
+	int a=obj.nextInt();
+	int b=obj.nextInt();
+	int c=a+b;
+System.out.println("the sum is "+c);
+}}
+-------------------------------------
 
 
 
