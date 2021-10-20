@@ -200,5 +200,29 @@ for(int i=1;i<=10;i++) //i=1 is the starting point, i<=10 end point or condition
 	System.out.println(i);
 	}}
 -------------------------------------------------
+Example 7:-
+-----------------------
+package batch201;
+import java.util.*;
+public class First 
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		for(int i=1;i<=3;i++) 
+		{
+			System.out.print("Enter Name: ");  
+		String name= sc.nextLine();
+		System.out.print("Enter Addres: ");  
+		String address= sc.nextLine();
+		System.out.print("Enter Phoneno: ");
+		String phoneno= sc.nextLine();
 
+		System.out.println("NAME: "+ name);
+		System.out.println("ADDRESS: "+ address);     
+		System.out.println("PHONENO: "+ phoneno);
+		}
+	}
+}
+--------------------------------------------------------------------
 
