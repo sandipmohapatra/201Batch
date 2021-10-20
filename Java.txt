@@ -149,5 +149,47 @@ public class First
 			System.out.println("the greatest is "+b);
 	}}
 ------------------------------------------------------------
+example 5:
+---------------------
+package batch201;
+import java.util.*;
+public class First 
+{
+	public static void main(String[] args)
+	{
+		Scanner obj=new Scanner(System.in);
+		System.out.println("enter 3 nos ");	
+		int a=obj.nextInt();
+		int b=obj.nextInt();
+		int c=obj.nextInt();
+		if(a>b && a>c)
+			System.out.println("the greatest is "+a);
+		else if(b>a && b>c)
+			System.out.println("the greatest is "+b);
+		else
+			System.out.println("the greatest is "+c);
+	}}
+---------------------------------------------------------------
+example 6:-
+----------------------
+package batch201;
+import java.util.*;
+public class First 
+{
+	public static void main(String[] args)
+	{
+		Scanner obj=new Scanner(System.in);
+		System.out.println("enter 3 nos ");	
+		int a=obj.nextInt();
+		int b=obj.nextInt();
+		int c=obj.nextInt();
+		if(a>b && a>c)
+			System.out.println("the greatest is "+a);
+		else if(b>a && b>c)
+			System.out.println("the greatest is "+b);
+		else
+			System.out.println("the greatest is "+c);
+	}}
+--------------------------------------------------------
 
 
