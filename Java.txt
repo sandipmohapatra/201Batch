@@ -1,0 +1,42 @@
+Java
+-------
+1)It is a programming language.By this we can develop standalone application,web application,network appliaction,mobile application.
+2)In java we save the file with the class name and the extension will be .java.After compilation it is converted to .class.It is in byte code.
+3)Java is platform independent.(we can run java on any OS).
+4)Java is simpler than c and c++ because we don't have pointer concept.We don't have operater overloading,multiple Inheritance.
+5)In java we have Object oriented Programmings means we have class,object,Inheritance,polymerphisim,abstaction,Encapsulation.
+i)class :- It contains variables and methods(collection of datamember and member functions).It is known as object factory.it is also known as blueprint of an object.
+
+ii)object :- it is a reference pointer to a class.With object we can access the variables and methods of a class.It is also called as instance of class.
+
+iii)inheritance :- It is used to reuse the existing code.java supports single inheritance.(multi-level,hirarcal).
+when one object acquires all the properties and behaviours of a parent object it is known as Inheritance.
+
+iv)polymerphisim:- poly means many ,merphisim means forms.
+In this we have run time polymerphisim and we have compile time polymerphisim.
+
+method overloading :-means method with same name but it has different datatypes the return type and parameter. 
+It is also known as compile time polymerphisim.The compiler will deside to with method it should send the parameters.
+example :-int sum(int a,int b);float sum(float a ,float b);
+
+method overriding:- example of abstract class and Interface.we have to take atleast 2 classes for it.
+In this the method name will be same and the parameter and return type datatype will be same.
+
+v)abstraction :- Hiding internal mechanism only focusing on functionality.
+example we switch on the light the light start glowing.The power generation is hidden only the functionality is displayed.
+
+vi)encapsulation :- exmple :- capsule protect the medicin.Protecting of data and Wrapping up of Data Members and it's associated functions into single unit is known as encapsulation.
+Protecting is done by the access specifiers.Java is highly secured.
+
+We have 4 access specifiers in java .
+1)private :- if we declare variables and methods as private we can access it within the class only. 
+2)public :-if we declare variables and methods as public we can access it within the class ,outside the class and also outside the package. 
+3)protected:- if we declare variables and methods as protected we can access it within the class and within the child class also. 
+4)default:-if we declare variables and methods as default we can access it within the class ,outside the class but not  outside the package.
+
+6)Java is portable, robust ,multithreaded.
+--------------------------------------------------------------------------------------------------
+
+
+
+
