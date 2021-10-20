@@ -35,7 +35,39 @@ We have 4 access specifiers in java .
 4)default:-if we declare variables and methods as default we can access it within the class ,outside the class but not  outside the package.
 
 6)Java is portable, robust ,multithreaded.
---------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+operator
+--------------
+1)unary operator :- i++,i--,++i,--i
+2)binary operator:-
+i)Arithmatic :-+,-,*,/,%
+ii)relational :->,<,<=,>=,=,!=
+iii)logical :-&&,||
+iv)bitwise :- &,|
+v)shift :- >>,<<,>>>
+3)ternary operator:- ?,:
+-----------------------------
+data type
+---------------------
+primary data type
+-----------------------------
+1)byte :- 1 byte 
+2)short :- 2 bytes
+3)int :- 4 bytes
+4)long :- 8 bytes
+5)float :- 4 bytes
+6)double :- 8 bytes
+7)char :- 2 bytes
+8)boolean :-1 bit
+-----------------------------------------------------
+secondary data type (derive data type)
+----------------------------------------------------
+1)String
+2)array
+----------------------------
+
+
+
 
 
 
