@@ -66,7 +66,29 @@ secondary data type (derive data type)
 2)array
 ----------------------------
 
-
+example 1:-
+-----------------------
+package batch201;
+public class First 
+{
+public static void main(String[] args)
+{
+	byte a =10;
+	short b=20;
+	int c=30;
+	long d=40;
+	float e=50.43f;
+	double f=78.33;
+	char g='a';
+	String h="apple";
+System.out.println("the value of a is "+a);
+System.out.println("the value of b is "+b+" the value of c is "+c);
+System.out.println("the value of d is "+d+" the value of e is "+e);
+System.out.println("the value of f is "+f+" the value of g is "+g);
+System.out.println("the value of h is "+h);
+}
+}
+-----------------------------------
 
 
 
