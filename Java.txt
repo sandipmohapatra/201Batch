@@ -191,5 +191,14 @@ public class First
 			System.out.println("the greatest is "+c);
 	}}
 --------------------------------------------------------
+package batch201;
+public class First 
+{
+	public static void main(String[] args)
+	{
+for(int i=1;i<=10;i++) //i=1 is the starting point, i<=10 end point or condition,i++ is the increment.
+	System.out.println(i);
+	}}
+-------------------------------------------------
 
 
