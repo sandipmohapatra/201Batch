@@ -247,5 +247,31 @@ public class First
 	}}
 
 ----------------------------------------------------------------------------
+example 9:-
+------------------------
+package batch201;
+public class First 
+{
+	public static void main(String[] s)
+	{
+		String a=s[0];
+		String b=s[1];
+		String c=s[2];
+		String d=s[3];
+		
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+		String e=a+b+c+d;
+		int sum=Integer.parseInt(a)+Integer.parseInt(b)+Integer.parseInt(c)+Integer.parseInt(d);
+		//Integer.parseInt(a) -- convert string to integer
+		System.out.println(e);
+		System.out.println(sum);
+	}}
+
+
+----------------------------------------------------------------------------------------
+
 
 
