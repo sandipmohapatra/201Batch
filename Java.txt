@@ -343,6 +343,56 @@ public class First
 	}
 --------------------------------------------------
 
+wap to create a bank class.
+where we have accno,name,address,phoneno,balance 
+take the input from the user and display it.
+
+---------------------------------------------------------------------
+example-12
+----------------------
+package batch201;
+import java.util.*;
+public class First {
+    long accountno,phoneno,balance;
+    String name;
+    String address;
+    static Scanner ob=new Scanner(System.in);
+    void input() {
+       System.out.println("enter accno,phone no,balance,name,address");
+        accountno=ob.nextLong();
+        phoneno=ob.nextLong();
+       balance=ob.nextLong();
+        name=ob.next();
+        address=ob.next();
+        
+    }
+    void display() {
+        System.out.println("the Account no is "+accountno);
+        System.out.println("the Phone no is "+phoneno);
+        System.out.println("the Balance is "+balance);
+        System.out.println("the Name is "+name);
+        System.out.println("the Address is "+address);
+        
+    }
+    public static void main(String[] args) {
+    	System.out.println("how many customer's data want to enter");
+    	int x=ob.nextInt();
+    First[] obj=new First[x];//array of objects
+    System.out.println("enter data for "+ x +"customers");
+    
+    for(int i=0;i<x;i++)
+    {
+    	obj[i]=new First();
+        obj[i].input();
+    }
+    for(int i=0;i<x;i++)
+    {
+    	obj[i].display();
+    }    }    }
+
+
+-----------------------------------------------------------------------------
+
 
 
 
