@@ -292,8 +292,56 @@ javap java.lang.String
 
 wap to enter 4 decimal nos and find the sum
 ----------------------------------------------------------------
-
-
+example-10
+public static void main(String[] s) {
+        
+        String a=s[0];
+        String b=s[1];
+        String c=s[2];
+        String d=s[3];
+        
+        
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+        
+        //String e=a+b+c+d;
+        float sum=Float.parseFloat(a)+Float.parseFloat(b)+Float.parseFloat(c)+Float.parseFloat(d);
+        System.out.println(sum);
+       
+        
+    }
+------------------------------------------------------------
+example-11
+-----------------------
+package batch201;
+import java.util.*;
+public class First 
+{
+	int rollno;
+	String name,address;
+	void input()
+	{
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter rollno,name,address");
+		rollno=ob.nextInt();
+		name=ob.next();
+		address=ob.next();
+	}
+	void display()
+	{
+		System.out.println("the rollno is "+rollno);
+		System.out.println("the name is "+name);
+		System.out.println("the address is "+address);
+			}
+	public static void main(String[] args) {
+		First obj=new First();//for the class we are creating object obj.new is to create memory block
+		obj.input();
+		obj.display();
+	}
+	}
+--------------------------------------------------
 
 
 
