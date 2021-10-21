@@ -272,6 +272,37 @@ public class First
 
 
 ----------------------------------------------------------------------------------------
+wrapper class
+----------------------
+all datatypes in java are also classes known as wrapper class.
+byte --Byte
+short -- Short
+int -- Integer
+long -- Long
+float -- Float
+double -- Double
+char -- Character
+String
+boolean -- Boolean
+all these classes belongs to lang package.
+package --- classes --- methods
+*
+javap java.lang.String
+-------------------------------------------------------------------------------------------------------------
+
+wap to enter 4 decimal nos and find the sum
+----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
 
 
