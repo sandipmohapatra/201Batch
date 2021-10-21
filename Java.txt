@@ -398,7 +398,7 @@ empno,name,salary,designation.
 constructor :-
 1)It is a function/method which has the same name as that of the class name.
 2)It doesn't have return type nor it return any value.
-3)we have to call function using an object........but in case of constructor it will be called when the object is created.
+3)we have to call function using an object.But in case of constructor it will be called when the object is created.
 4)we have 2 types of constructor 1)default 2)parameterized.
 5)constructor are used for initalization of instance variable.
 
@@ -407,6 +407,8 @@ diffence between function and constructor
 1)function returns a value where as constructor does return a value.
 2)we can call 100's of function by a single object.but for calling the constructor we have to create an object.
 -----------------------
+example-13
+-------------------------
 package batch201;
 import java.util.*;
 public class First {
@@ -433,15 +435,36 @@ int sum(int a,int b)
   public static void main(String[] args) 
   {
 	First ob=new First();
-	First ob1=new First(101,77665544,7000,"sandip","Bangalore");
+	First ob1=new First(101,7766554433L,7000,"sandip","Bangalore");
 	First ob2=new First();
 	First ob3=new First();
 	System.out.println(ob.sum(9, 8));
 }}
 -----------------------------------------------------------
-
-
-
+wap to pass employee data as parameter and display the data using parameterized constrcutor. 
+empno,name,address,phoneno,email.
+----------------------------------------------------------------
+Example -14
+-----------------------
+public class Six {
+int employeeno;
+long phoneno;
+String name,address,email;
+public Six(int employeeno, long phoneno, String name, String address, String email) {
+    super();
+    this.employeeno = employeeno;
+    this.phoneno = phoneno;
+    this.name = name;
+    this.address = address;
+    this.email = email;
+    System.out.println(employeeno+" "+phoneno+" "+name+" "+address+" "+email);
+}
+public static void main(String[] args) {
+    Six ob=new Six(101,66746874l,"poorvi","pune","poorvi@gmail.com");
+    
+}
+}
+--------------------------------------------------------------
 
 
 
