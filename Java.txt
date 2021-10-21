@@ -527,6 +527,58 @@ obj1.display();
 	}
 }
 ----------------------------------------------------------------------------
+wap to create 2 class 1)customer 2)bank account 3)kundan
+A customer has a bank accont.
+--------------------------------------------------------------------
+public class bankaccount {
+    long accountno, customerid;
+    String bankname;
+    int branchcode;
+    String IFSCcode;
+    public bankaccount(long accountno,long customerid,String bankname,int branchcode,String IFSCcode)
+    {    this.accountno=accountno;
+        this.customerid=customerid;
+        this.bankname=bankname;
+        this.branchcode=branchcode;
+        this.IFSCcode=IFSCcode;
+    }
+    @Override
+    public String toString() {
+        return "bankaccount [accountno=" + accountno + ", customerid=" + customerid + ", bankname=" + bankname
+                + ", branchcode=" + branchcode + ", IFSCcode=" + IFSCcode + "]";
+    }
+}
+---------------------------------------------------------------------------------------------------------------
+public class customer {
+    String name,email;
+    bankaccount bankacct;   //has a relatioship;
+    public customer(String name,String email,bankaccount bankacct)
+    {
+        this.name = name;
+        this.email = email;
+        this.bankacct = bankacct;
+        }
+        void display() {
+            System.out.println("Emp name :"+ name);
+            System.out.println("Emp email :"+ email);
+            System.out.println("Emp Bankaccount :"+ bankacct);
+            
+        }
+    }
+----------------------------------------------------------------------------------------------------
+public static void main(String[] args) {
+        bankaccount obj1=new bankaccount(110,145445,"hdfc",12234,"HDFC1254");
+        customer obj2=new customer("asdf","asdf@gmail.com",obj1);
+        obj2.display();
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 
