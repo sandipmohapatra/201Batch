@@ -392,8 +392,53 @@ public class First {
 
 
 -----------------------------------------------------------------------------
+create a employee class and enter data for n no of employees.
+empno,name,salary,designation.
+--------------------------------------------------------------
+constructor :-
+1)It is a function/method which has the same name as that of the class name.
+2)It doesn't have return type nor it return any value.
+3)we have to call function using an object........but in case of constructor it will be called when the object is created.
+4)we have 2 types of constructor 1)default 2)parameterized.
+5)constructor are used for initalization of instance variable.
 
-
+diffence between function and constructor
+-------------------------------------------------------------------------------------------
+1)function returns a value where as constructor does return a value.
+2)we can call 100's of function by a single object.but for calling the constructor we have to create an object.
+-----------------------
+package batch201;
+import java.util.*;
+public class First {
+    long accountno,phoneno,balance; //instance variable
+    String name;
+    String address;
+  First()
+  {
+	  System.out.println("this is a default constructor");
+  }
+First(long accountno, long phoneno, long balance, String name, String address) //local variable
+{
+	this.accountno = accountno;
+	this.phoneno = phoneno;
+	this.balance = balance;
+	this.name = name;
+	this.address = address;
+	System.out.println(accountno +"  "+phoneno+ " "+balance+" "+name+"  "+address);
+}
+int sum(int a,int b)
+{
+	return a+b;
+}
+  public static void main(String[] args) 
+  {
+	First ob=new First();
+	First ob1=new First(101,77665544,7000,"sandip","Bangalore");
+	First ob2=new First();
+	First ob3=new First();
+	System.out.println(ob.sum(9, 8));
+}}
+-----------------------------------------------------------
 
 
 
