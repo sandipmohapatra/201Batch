@@ -465,8 +465,68 @@ public static void main(String[] args) {
 }
 }
 --------------------------------------------------------------
+1)Inheritance (is-a relationship)
+2)Aggregation(Has-a relationship)
+
+has-a relationship(employee has a address)
+employee class
+address class
+--------------------------------------
+1)
+package batch201;
+
+public class Address 
+{
+int roadno;
+String area,city,state;
+Address(int roadno, String area, String city, String state) {
+	this.roadno = roadno;
+	this.area = area;
+	this.city = city;
+	this.state = state;
+}
+@Override
+public String toString() {
+	return "Address [roadno=" + roadno + ", area=" + area + ", city=" + city + ", state=" + state + "]";
+}
 
 
+}
+---------------------------------------------------------
+2)
+package batch201;
+class Employee 
+{
+int empno;
+String name,email;
+Address add;//has-a relationship
+ Employee(int empno, String name, String email, Address add) 
+ {
+	this.empno = empno;
+	this.name = name;
+	this.email = email;
+	this.add = add;
+}
+void display()
+{
+	System.out.println("Empno :"+empno);
+	System.out.println("Emp name :"+name);
+	System.out.println("Emp email :"+email);
+	System.out.println("Emp Address :"+add);
+	}
+}
+-------------------------------------------------------------------------------
+3)package batch201;
+public class Riya 
+{
+	public static void main(String[] args) 
+	{
+	Address obj=new Address(10, "M G Road", "Bangalore", "Karnataka");
+Employee obj1=new Employee(101, "Riya","riya@gmail.com", obj);
+obj1.display();
+	}
+}
+----------------------------------------------------------------------------
 
 
 
