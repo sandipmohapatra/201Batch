@@ -572,6 +572,88 @@ public static void main(String[] args) {
         obj2.display();
 
 -------------------------------------------------------------------------------------------------------------------
+toString() :-It is used to convert Object to string.
+----------------------------------------------------------------------------------------------------------------
+Inheritance:-
+-------------------
+1)It is used for reusing the existing code.
+2)In this child class/derived class/sub class acquiring properties from base class/parent class/super class.
+3)In this child class will depend upon the parent class.This known as tight coupling.
+4)java support single inheritance(multi-level,hirarcal).
+5)we use the keyword extends to inherite the parent class.
+6)We use the keyword super to access the parent class variables and methods.
+7)the child class will contain the main()  
+-----------------------------------------------------------------------------------------------------------------
+wap to create a parent class student (rollno,name,address)
+and a child class marks(phy,chem,bio,total)
+----------------------------------------------------------------------------------------
+Example-13
+-------------------
+package batch201;
+import java.util.*;
+public class Student 
+{
+int rollno;
+String name,address;
+void input()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name,address");
+	rollno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+}
+------------------------------------------------------
+package batch201;
+import java.util.*;
+public class Marks extends Student
+{
+int phy,chem,bio,total;
+void input()
+{super.input();
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter phy,chem,bio marks");
+	phy=ob.nextInt();
+	chem=ob.nextInt();
+	bio=ob.nextInt();
+	total=phy+chem+bio;
+}
+void display()
+{
+	super.display();
+	System.out.println("phy mark is"+phy);
+	System.out.println("chem mark is"+chem);
+	System.out.println("bio mark is"+bio);
+	System.out.println("total mark is"+total);
+	
+}
+public static void main(String[] args) {
+	Marks ob1=new Marks();
+	ob1.input();
+	ob1.display();
+}
+}
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
