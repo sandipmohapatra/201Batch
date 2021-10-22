@@ -641,7 +641,68 @@ public static void main(String[] args) {
 }
 }
 ------------------------------------------------------------------------
+wap to create a parent class employee (empno,name,salary)
+and create a child class empdetails(address,qualif,dept)
+--------------------------------------------------------------------------------------
+Example-14
+-------------------
+package Inheritance;
+import java.util.Scanner;
+public class Employee {
+ 
+    int empno;
+    String name;
+    double salary;
+    
+void input()
+{
+    Scanner ob=new Scanner(System.in);
+    System.out.println("enter empno,name,salary");
+    empno=ob.nextInt();
+    name=ob.next();
+    salary=ob.nextInt();
+    
+}
+void display()
+{
+    System.out.println("the name is "+name);
+    System.out.println("the empno is "+empno);
+    System.out.println("the salary is "+salary);
+    }
+}
 
+----------------------------------------------------------------------------------------
+package Inheritance;
+import java.util.Scanner;
+public class Empdetails extends Employee {
+    
+    String address,qualif,dept;
+    void input()
+    {super.input();
+        Scanner ob=new Scanner(System.in);
+        System.out.println("enter address,qualif,dept");
+        address=ob.next();
+        qualif=ob.next();
+        dept=ob.next();
+        
+    }
+    void display()
+    {
+        super.display();
+        System.out.println("The address"+address);
+        System.out.println("The qualification is"+qualif);
+        System.out.println("The dept is"+dept);
+        
+        
+    }
+    public static void main(String[] args) {
+        Empdetails ob1=new Empdetails();
+        ob1.input();
+        ob1.display();
+    }
+}
+
+----------------------------------------------------------------------------
 
 
 
