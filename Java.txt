@@ -932,6 +932,7 @@ Interface :- it is similar to abstract class but in this it only contain abstrac
 we don't use the keyword abstract.we cann't create object for an interface.
 we have to override the methods of the interface into a child class and create object for the child class.
 By interface we can perform multiple inheritance.
+An interface can extend another interface.
 -----------------------------------------------------------------------------
 example-17
 --------------------
@@ -991,9 +992,28 @@ public static void main(String[] args) {
 	 ob.displaymarks();
 }}
 ---------------------------------------------------------------------------------------
+final :- If we declare
+we can define a class as final.Then it cannot be extended/inherite it
+we can define method as final.Then we cannot override it.
+we can define variable as final.we have to assign it first and it cannot be changed.
 
-
-
+Example-18
+--------------------
+package batch201;
+ final class finalexample 
+{
+final  int a=10;
+final void input()
+{
+	System.out.println("This is a final method");
+}
+public static void main(String[] args) {
+	finalexample ob=new finalexample();
+	System.out.println(ob.a);
+	ob.input();
+}
+}
+--------------------------------------------
 
 
 
