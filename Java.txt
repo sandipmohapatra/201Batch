@@ -703,7 +703,72 @@ public class Empdetails extends Employee {
 }
 
 ----------------------------------------------------------------------------
+Inheritance using constructor
+---------------------------------------------
+Example-15
+---------------------------
+package batch201;
+import java.util.*;
+public class Student 
+{
+int rollno;
+String name,address;
+Student(int rollno, String name, String address) 
+{
+	this.rollno = rollno;
+	this.name = name;
+	this.address = address;
+}
 
+
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+}
+--------------------------------------
+package batch201;
+import java.util.*;
+public class Marks extends Student
+{
+int phy,chem,bio,total;
+
+public Marks(int rollno, String name, String address, int phy, int chem, int bio) 
+{
+	super(rollno, name, address); //the super class constructor will execute first then the child class.
+	this.phy = phy;
+	this.chem = chem;
+	this.bio = bio;
+	
+	}
+void display()
+{
+	total=phy+chem+bio;
+	super.display();
+	System.out.println("phy mark is"+phy);
+	System.out.println("chem mark is"+chem);
+	System.out.println("bio mark is"+bio);
+	System.out.println("total mark is"+total);
+	}
+public static void main(String[] args) {
+	Marks ob1=new Marks(101,"sandip","Bangalore",78,76,77);
+	ob1.display();
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name,address,phy,chem,bio marks");
+	ob1.rollno=ob.nextInt();
+	ob1.name=ob.next();
+	ob1.address=ob.next();
+	ob1.phy=ob.nextInt();
+ob1.chem=ob.nextInt();
+ob1.bio=ob.nextInt();
+	Marks ob2=new Marks(ob1.rollno,ob1.name,ob1.address,ob1.phy,ob1.chem,ob1.bio);
+	ob1.display();
+	
+}
+}
+--------------------------------------------------------------------------------------------------
 
 
 
