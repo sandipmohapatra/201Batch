@@ -768,12 +768,87 @@ ob1.bio=ob.nextInt();
 	
 }
 }
---------------------------------------------------------------------------------------------------
-
-
-
-
-
+---------------------------------------Banking Project-----------------------------------------------------------
+wap to create a parent class bank class(accno,name,balance)
+child class customer (address,transaction(withdraw/deposite),final balance)
+---------------------------------------------------------------------------------------------------------
+use :- case and switch /if and else/constructor
+-------------------------------------------------------------------------------
+package Prathyusha;
+import java.util.*;
+public class BANK1 {
+int accno;
+String name;
+Float balance;
+void input()
+{
+Scanner s=new Scanner(System.in);
+System.out.println("Enter accno, name, balance of employee: ");
+accno=s.nextInt();
+name=s.next();
+balance=s.nextFloat();
+}
+void display()
+{
+    System.out.println("Accno is:"+accno);
+    System.out.println("Name is:"+name);
+    System.out.println("Initial Balance is:"+balance);
+}
+}
+----------------------------
+package Prathyusha;
+import java.util.*;
+public class Customer1 extends BANK1 {
+String address, transaction;
+Float finalbalance;
+Scanner s=new Scanner(System.in);
+Customer1()
+{
+    super.input();
+    Float amount;
+    System.out.println("Enter address, transaction type: ");
+    Scanner s=new Scanner(System.in);
+    address=s.next();
+    transaction=s.next();
+    switch(transaction)
+    {
+    case "withdraw":
+        System.out.println("Enter amount for withdraw: ");
+        amount=s.nextFloat();
+        if(amount<=super.balance) {
+        finalbalance=super.balance-amount;
+        }
+        else
+        {
+            System.out.println("Enter valid amount");
+        }
+        break;
+    case "deposit":
+    {
+        System.out.println("Enter amount for deposit: ");
+        amount=s.nextFloat();
+        finalbalance=super.balance+amount;
+    }
+    break;
+    default:
+        System.out.println("Enter valid transaction type");
+        break;
+    }
+    }
+void display()
+{
+    super.display();
+    System.out.println("Address is: "+address);
+    System.out.println("Final Balance is: "+final
+System.out.println("Final Balance is: "+finalbalance);
+}
+public static void main(String[] args)
+{
+    Customer1 c=new Customer1();
+    c.display();
+}
+}
+---------------------------------------------------------------------------------
 
 
 
