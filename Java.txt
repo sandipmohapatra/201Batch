@@ -849,14 +849,77 @@ public static void main(String[] args)
 }
 }
 ---------------------------------------------------------------------------------
+wap to create a parent class student(rollno,name,address)
+create child class Stream1(phy,chem,bio);
+create child class Stream2(phy,chem,maths);
+display the data.
+---------------------------------------------------------------
+student
+stream1 extends student--(main)
+stream2 extends student--(main)
+---------------------------------------------
+Abstract :-It is a keyword.
+we can declare a class as abstract.
+we can declare a method as abstract.
+abstract class is not a complete class .so we cannot create an object of an abstract class. 
+we have to inherite it to child class and create object of the child class.
+An abstract method doesn't have body.we have to override it into a child class define a body and then we can access it. 
+what is the use of abstract?
+-----------------------------------------
+client want ---------------------------------bank project
+customer registration
+customer feedback
+loan application
+credit card/debit card application
+etc
+------------------------------------------------
+abstract class bank
+{
+abstract void customer registration();
+abstract void customer feedback();
+abstract void loan application();
+abstract void credit card/debit card application();
+}
 
+class bankmain extends bank
+{
+//you have to override all the methods.
+}
+-----------------------------------------------------------------------------
+example-16
+-------------------------
+package batch201;
+abstract class Student1
+{
+	abstract void studentDetails();//incomplete methods without body
+	abstract void studentMarks();
+	void greet()//concrete method with body
+	{
+		System.out.println("Good Afternoon students");
+	}
+}
+public class AbstractclassExample extends Student1
+{
 
+	@Override
+	void studentDetails() {
+		System.out.println("This is sandip");
+		
+	}
 
+	@Override
+	void studentMarks() {
+		System.out.println("my marks is 78");
+		
+	}
 
-
-
-
-
+	public static void main(String[] args) {
+		AbstractclassExample ob=new AbstractclassExample();
+		ob.studentDetails();
+		ob.studentMarks();
+	}
+}
+-----------------------------------------------
 
 
 
