@@ -1467,7 +1467,7 @@ In Exception handling we have 5 key words.
 1)try
 2)catch
 3)finally
-4)throws
+4)throws :- mostly used for checked exception.
 5)throw
 ---------------------------------------------------------------
 try-finally
@@ -1496,7 +1496,28 @@ public class ExceptionHandling
 				System.out.println("this is finally block");
 			}
 }}
-------------------------------------------------------------------------- 
+-------------------------------------------------------------------------
+The exceptions are 3 types
+-------------------------------------
+1)checked exception:-Interrupted exception,sql exception,IOException etc.
+2)unchecked exception:- divide by zero error,arrayindexoutofbound exception,inputmismatch exception etc.
+3)error :- stack overflow,harddisk crash
+-------------------------------------------------------------------------
+ Example :-checked exception
+--------------------------------------
+package batch201;
+import java.util.*;
+public class ExceptionHandling 
+{	public static void main(String[] args) throws InterruptedException 
+	{		
+	for(int i=1;i<=10;i++)
+	{
+		System.out.println(i);
+		Thread.sleep(1000); //interrupt the flow of control so we have to check it
+	}
+}}
+--------------------------------------------------------------------------------------------
+
 
 
 
