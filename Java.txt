@@ -1402,6 +1402,9 @@ System.out.println(ex);
 	}
 }
 -------------------------------------------------------------------------
+If try is success then catch is success .Means there is some error.
+If try is not success then catch is also notsuccess .Means there is no error.
+---------------------------------------------------------------------------------
 
 
 
