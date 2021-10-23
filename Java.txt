@@ -1540,6 +1540,91 @@ else
 	throw new Exception ("you are not eligible to vote");
 }}
 ------------------------------------------------------------------------------
+Collection Framework
+--------------------------------------
+It is a collection of Objects.It is data structure in java.
+we have 3 Interfaces
+Tree(Interface) -HashSet,LinkedHashSet,TreeSet(classes)
+List(Interface) - HashLinkedList,LinkedList,Stack,Vector,ArrayList (classes)
+Map(Interface) :- HashMap,HashTable (classes)
+
+------------------------------------------------------------------------------------------
+1)TreeSet :- It display the data in shorted Order
+example :-
+package batch201;
+import java.util.*;
+public class TreeExample 
+{
+public static void main(String[] args) {
+	TreeSet ts=new TreeSet();
+	ts.add(60);
+	ts.add(40);
+	ts.add(30);
+	ts.add(20);
+	ts.add(10);
+	ts.add(70);
+	ts.add(50);
+	System.out.println(ts);
+}
+}
+----------------------------------------------------------------------
+2)HashSet :- It will display the data in ramdom order.
+
+package batch201;
+import java.util.*;
+public class TreeExample 
+{
+public static void main(String[] args) {
+	HashSet ts=new HashSet();
+	ts.add(60);
+	ts.add(40);
+	ts.add(30);
+	ts.add(20);
+	ts.add(20);
+	ts.add(10);
+	ts.add(70);
+	ts.add(50);
+	System.out.println(ts);
+}
+}
+---------------------------------------------------------------------------
+3)LinkedHashSet :- It display data in the same order.
+
+package batch201;
+import java.util.*;
+public class TreeExample 
+{
+public static void main(String[] args) {
+	HashSet ts=new HashSet();
+	ts.add(60);
+	ts.add(40);
+	ts.add(30);
+	ts.add(20);
+	ts.add(20);
+	ts.add(10);
+	ts.add(70);
+	ts.add(50);
+	System.out.println(ts);
+}
+}
+------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
