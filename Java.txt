@@ -1517,6 +1517,30 @@ public class ExceptionHandling
 	}
 }}
 --------------------------------------------------------------------------------------------
+*throws exception :- it doesn't have any body.It is written with main() and any other methods.
+----------------------------------------------------------------
+throw exception :- it is used for user defined exception.
+example :- 1)salary should be greater than 18000.
+2)age should be greater than 18 to vote.
+etc..
+-------------------------------------------------------------------------------
+example:-
+--------------------
+package batch201;
+import java.util.*;
+public class ExceptionHandling 
+{	public static void main(String[] args) throws Exception 
+	{		
+Scanner ob=new Scanner(System.in);
+System.out.println("enter your age");
+int age=ob.nextInt();
+if(age>=18)
+	System.out.println("your are aligible to vote");
+else
+	throw new Exception ("you are not eligible to vote");
+}}
+------------------------------------------------------------------------------
+
 
 
 
