@@ -1310,8 +1310,60 @@ public static void main(String[] args) {
 	 ob.displaymarks();
 }}
 ----------------------------------------------------------------------------------------------
+getter() and setter():- first we have to set the value and then we can get the value.
+-----------------------------------------------------------------------------------------------------
+example:-23
+---------------------
+package batch201;
 
+public class Bank 
+{
+private int accno;
+private String name,address;
+private int OTP;
+public int getAccno() {
+	return accno;
+}
+public void setAccno(int accno) {
+	this.accno = accno;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+private int getOTP() {
+	return OTP;
+}
+private void setOTP(int oTP) {
+	OTP = oTP;
+}}
 
+-------------------------------------
+package batch201;
+
+public class Test1 
+{
+	public static void main(String[] args) {
+	Bank ob=new Bank();
+	ob.setAccno(101);
+	ob.setName("sandip");
+	ob.setAddress("Bangalore");
+	System.out.println("the accno is "+ob.getAccno());
+	System.out.println(ob.getName());
+	System.out.println(ob.getAddress());
+}
+}
+---------------------------------------------------
+wa.p to enter student rollno,name,address and display it using setter(),getter().
+---------------------------------------------------
 
 
 
