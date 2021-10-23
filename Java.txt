@@ -1549,7 +1549,7 @@ List(Interface) - HashLinkedList,LinkedList,Stack,Vector,ArrayList (classes)
 Map(Interface) :- HashMap,HashTable (classes)
 
 ------------------------------------------------------------------------------------------
-1)TreeSet :- It display the data in shorted Order
+1)TreeSet :- It display the data in shorted Order.
 example :-
 package batch201;
 import java.util.*;
@@ -1595,7 +1595,7 @@ import java.util.*;
 public class TreeExample 
 {
 public static void main(String[] args) {
-	HashSet ts=new HashSet();
+	LinkedHashSet ts=new LinkedHashSet();
 	ts.add(60);
 	ts.add(40);
 	ts.add(30);
@@ -1608,7 +1608,41 @@ public static void main(String[] args) {
 }
 }
 ------------------------------------------------------------------------------------
+Collection of Objects
+-------------------------------
+package collection;
+public class Employee 
+{
+int rollno;
+String name,address;
+public Employee(int rollno, String name, String address) {
+	this.rollno = rollno;
+	this.name = name;
+	this.address = address;
+}
+@Override
+public String toString() {
+	return "Employee [rollno=" + rollno + ", name=" + name + ", address=" + address + "]";
+}
 
+}
+-----------------------------------------------------------------------------------------
+package collection;
+import java.util.*;
+public class FirstCollection 
+{
+public static void main(String[] args) {
+	LinkedList ls=new LinkedList();
+	Employee ob1=new Employee(101,"Riya","bangalore");
+	Employee ob2=new Employee(102,"Rik","bangalore");
+	Employee ob3=new Employee(103,"Somya","bangalore");
+	ls.add(ob1);
+	ls.add(ob2);
+	ls.add(ob3);
+	System.out.println(ls);
+}
+}
+-----------------------------------------------------------------------------------------------
 
 
 
