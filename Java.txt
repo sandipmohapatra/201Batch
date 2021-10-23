@@ -1181,9 +1181,13 @@ public class COVIDHOSPITAL implements hospital{
 }
 ---------------------------------------------------------------------------------------
 static :- It is a keyword.
-We can declare a class as static,variable as static,method as static and we can have static block.
-In this a single copy is create and send to the JVM.(java virtual machine).
+We can declare a inner class as static,variable as static,method as static and we can have static block.
+In this a single copy is created and send to the JVM.(java virtual machine).
 so If we declare a method or variable as static we neednot create an object to access it.
+static block execute before the main method.
+we cannot call a non-static variable inside a static method.
+but we can call a static variable inside a non-static method.
+example :- main() is a static method so inside it we can call static variable and static methods directly without any object.
 ---------------------------------------------------
 example-20
 ------------------
@@ -1208,10 +1212,104 @@ public static void main(String[] args) {
 }
 }
 ----------------------------------------------------
+wap to create  employee class .enter details into static variables and call inside a static method and display it.
+--------------------------------------------------------------------------------------------
+Example-21
+----------------------
+package firstjava;
+import java.util.Scanner;
+public class employeeStatic {
+    static int empid;
+    static String name;
+    static int age;
+    static String address;
+    
+    static void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter empid / name / age / address");
+        empid = sc.nextInt();
+        name = sc.next();
+        age = sc.nextInt();
+        address = sc.next();
+    }
+    static void display() {
+        System.out.println("Employe id" +empid);
+        System.out.println("Employe name " +name);
+        System.out.println("Employe age " +age);
+        System.out.println("Employe address " +address);
+        
+    }
+    static {
+        System.out.println("Enter Details of Employee");
+    }
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        input();
+        display();
+    }
+}
+--------------------------------------------------------------------
+*Inside an interface if we declare a variable then it is static and final.
+example-22
+----------------------
+package batch201;
+import java.util.*;
+interface student1
+{
+	int regid=101; //inside a interface if we declare a variable then it is static and final.
+	void inputdetails();
+	void inputmarks();
+}
+interface student2 extends student1
+{
+	void displaydetails();
+	void displaymarks();
+	}
+class InterfaceExample implements student2
+{
+Scanner ob=new Scanner(System.in);
+int rollno,phy,chem;
+String name;
 
+@Override
+public void inputdetails() {
+System.out.println("enter rollno,name");	 
+	rollno=ob.nextInt();
+	name=ob.next();
+		}
 
+@Override
+public void inputmarks()
+{
+	System.out.println("enter phy,chem marks");	 
+	phy=ob.nextInt();
+	chem=ob.nextInt();
+	
+}
+	@Override
+	public void displaydetails() 
+	{
+		 System.out.println("rollno :"+rollno);
+		 System.out.println("name :"+name);
+	}
 
-
+	@Override
+	public void displaymarks()
+	{
+		 
+		System.out.println("phy :"+phy);
+		System.out.println("chem :"+chem);
+		
+	}
+public static void main(String[] args) {
+	 InterfaceExample ob=new  InterfaceExample();
+	  ob.inputdetails();
+	 ob.inputmarks();
+	 System.out.println("the registrartion id is :"+regid);
+	 ob.displaydetails();
+	 ob.displaymarks();
+}}
+----------------------------------------------------------------------------------------------
 
 
 
