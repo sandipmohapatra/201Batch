@@ -1364,9 +1364,44 @@ public class Test1
 ---------------------------------------------------
 wa.p to enter student rollno,name,address and display it using setter(),getter().
 ---------------------------------------------------
-
-
-
+Exception Handling (Error Handling)
+----------------------------------------------------------
+There are 3 types of error.
+1)Compile time error (missing of semi-colon,spelling mistake etc.)--manually we have to correct it.
+2)logical error (this is due to wrong Logic)--manually we have to correct it.
+3)Run time exception (This is due to wrong input)--we are going to handle it.
+-------------------------------------------------------------------------------------------
+Runtime Exception
+------------------------------
+example:- 
+1)divide by zero error.
+2)entering character inplace of number.
+3)crossing the array limit.
+etc
+-----------------------------------------------------------------------------
+The main purpose of exception handling is to handle the error and allow the program to excecute till the end of the program.It should not terminate in between.
+-----------------------------------------------------------------
+example 1
+-----------------
+package batch201;
+public class ExceptionHandling 
+{
+	public static void main(String[] args) 
+	{
+		try
+		{
+		int a=10;
+		int b=0;
+System.out.println("the result of div is "+(a/b));
+		}
+		catch(Exception ex)
+		{
+System.out.println(ex);
+	}
+		System.out.println("this is the end of the prg");
+	}
+}
+-------------------------------------------------------------------------
 
 
 
