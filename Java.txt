@@ -1014,6 +1014,214 @@ public static void main(String[] args) {
 }
 }
 --------------------------------------------
+Core java Assignment-1
+--------------------------------------------
+COID -19 hospital
+1)use case and switch and Interface,Scanner class 
+i)for patient Registration
+ii)bed booking
+iii)Doctor appointment
+iv)ambulance booking
+v)feedback
+---------------------------------------------------------------------------------------
+package Prathyusha;
+import java.util.*;
+interface hospital
+{
+	void patientregistration();
+	void bedbooking();
+	void doctorappointment();
+	void ambulancebooking();
+	void feedback();
+}
+public class COVIDHOSPITAL implements hospital{
+	COVIDHOSPITAL()
+	{
+		System.out.println("Welcome To COVID19 HOSPITAL");
+	}
+	static Scanner s=new Scanner(System.in);
+	@Override
+	public void patientregistration() {
+		String name,email,gender,address,dob;
+		long phoneno;
+		System.out.println("Enter name, email, gender, dob, address,phoneno: ");
+		name=s.next();
+		email=s.next();
+		gender=s.next();
+		dob=s.next();
+		address=s.next();
+		phoneno=s.nextLong();
+		System.out.println("Patient Registration done sccessfully!");
+		System.out.println("Patient Name is:"+name);
+		System.out.println("Patient Email is:"+email);
+		System.out.println("Patient Gender is:"+gender);
+		System.out.println("Patient Date Of Birth is:"+dob);
+		System.out.println("Patient Address is:"+address);
+		System.out.println("Patient Phone Number is:"+phoneno);
+	}
+
+	@Override
+	public void bedbooking() {
+		String name,email,gender,address;
+		String bedtype;
+		Long phoneno;
+		int bedcount;
+		System.out.println("Enter name, email, gender,address,phoneno, bed type, bedcount: ");
+		name=s.next();
+		email=s.next();
+		gender=s.next();
+		address=s.next();
+		phoneno=s.nextLong();
+		bedtype=s.next();
+		bedcount=s.nextInt();
+		System.out.println("Bed Booking done successfully!");
+		System.out.println("Patient Name is:"+name);
+		System.out.println("Patient Email is:"+email);
+		System.out.println("Patient Gender is:"+gender);
+		System.out.println("Patient Date Of Birth is:"+dob);
+		System.out.println("Patient Addressis:"+address);
+		System.out.println("Patient Phone Number is:"+phoneno);
+		System.out.println("Bed Type is:"+bedtype);
+		System.out.println("Number of beds booked is:"+bedcount);
+	}
+
+	@Override
+	public void doctorappointment() {
+		String name,email,gender,address,doctorname,dateofappointment;
+		Long phoneno;
+		System.out.println("Enter name, email, gender,address,phoneno,doctorname,dateofappointment: ");
+		name=s.next();
+		email=s.next();
+		gender=s.next();
+		address=s.next();
+		phoneno=s.nextLong();
+		doctorname=s.next();
+		dateofappointment=s.next();
+		System.out.println("DoctorAppointment done successfully!");
+		System.out.println("Patient Name is:"+name);
+		System.out.println("Patient Email is:"+email);
+		System.out.println("Patient Gender is:"+gender);
+		System.out.println("Patient Addressis:"+address);
+		System.out.println("Patient Phone Number is:"+phoneno);
+		System.out.println("Doctor Name is:"+doctorname);
+		System.out.println("Date Of Appointment is:"+dateofappointment);
+		
+	}
+
+	@Override
+	public void ambulancebooking() {
+		String name,email,gender,address,typeofambulance,sizeofambulance;
+		Long phoneno;
+		System.out.println("Enter name, email, gender,address,phoneno,typeofambulance,sizeofambulance: ");
+		name=s.next();
+		email=s.next();
+		gender=s.next();
+		address=s.next();
+		phoneno=s.nextLong();
+		typeofambulance=s.next();
+		sizeofambulance=s.next();
+		System.out.println("Ambulance Booking done successfully!");
+		System.out.println("Patient Name is:"+name);
+		System.out.println("Patient Email is:"+email);
+		System.out.println("Patient Gender is:"+gender);
+		System.out.println("Patient Addressis:"+address);
+		System.out.println("Patient Phone Number is:"+phoneno);
+		System.out.println("Doctor Name is:"+typeofambulance);
+		System.out.println("Date Of Appointment is:"+sizeofambulance);
+		
+	}
+
+	@Override
+	public void feedback() {
+		
+		String name,email,feedback;
+		Long phoneno;
+		name=s.next();
+		email=s.next();
+		phoneno=s.nextLong();
+		feedback=s.next();
+		System.out.println("Thank You for your feedback!");
+		System.out.println("Patient Name is:"+name);
+		System.out.println("Patient Email is:"+email);
+		System.out.println("Patient Phone Number is:"+phoneno);
+		System.out.println("Feedback is:"+feedback);
+		
+	}
+	public static void main(String args[]) {
+		COVIDHOSPITAL c=new COVIDHOSPITAL();
+		int option;
+		System.out.println("Enter option from 1 to 5");
+		option=s.nextInt();
+		switch(option) {
+		case 1:
+			System.out.println("You have chosen option"+option);
+			c.patientregistration();
+			break;
+		case 2:
+			System.out.println("You have chosen option"+option);
+			c.bedbooking();
+			break;
+		case 3:
+			System.out.println("You have chosen option"+option);
+			c.doctorappointment();
+			break;
+		case 4:
+			System.out.println("You have chosen option"+option);
+			c.ambulancebooking();
+			break;
+		case 5:
+			System.out.println("You have chosen option"+option);
+			c.feedback();
+			break;
+		default:System.out.println("Enter valid option");
+				break;
+		}
+	}
+
+}
+---------------------------------------------------------------------------------------
+static :- It is a keyword.
+We can declare a class as static,variable as static,method as static and we can have static block.
+In this a single copy is create and send to the JVM.(java virtual machine).
+so If we declare a method or variable as static we neednot create an object to access it.
+---------------------------------------------------
+example-20
+------------------
+package batch201;
+
+public class StaticExample 
+{
+static int a=10,b=20;
+static int sum()
+{
+	int c=a+b;
+	return c;
+}
+static
+{
+	System.out.println("this is a static block");
+}
+public static void main(String[] args) {
+	System.out.println("this is main method");
+	System.out.println(a);System.out.println(b);
+	System.out.println("the sum is "+sum());
+}
+}
+----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
