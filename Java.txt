@@ -1802,17 +1802,15 @@ ls.add("grapes");
 ls.add("lichi");
 System.out.println(ls);
 System.out.println("*******************************");
+//for each loop
 for(Object ob:ls)
 	System.out.println(ob);
 System.out.println("*******************************");
-Iterator it=ls.iterator();
+Iterator it=ls.iterator();//interface it has 2 methods hasNext(),next()
 while(it.hasNext())
 {
 	System.out.println(it.next());
-}
-
-}
-}
+}}}
 ------------------------------------------------------------------
 
 
