@@ -1787,7 +1787,33 @@ public class Treeexample
 		  System.out.println(ll);
 	  }	}
 -----------------------------------------------------------------------------------------------
+example-30
+---------------------
+package collection;
+import java.util.*;
+public class CollectionTest 
+{
+public static void main(String[] args) 
+{
+LinkedList<String> ls=new LinkedList<String>();
+ls.add("banana");
+ls.add("apple");
+ls.add("grapes");
+ls.add("lichi");
+System.out.println(ls);
+System.out.println("*******************************");
+for(Object ob:ls)
+	System.out.println(ob);
+System.out.println("*******************************");
+Iterator it=ls.iterator();
+while(it.hasNext())
+{
+	System.out.println(it.next());
+}
 
+}
+}
+------------------------------------------------------------------
 
 
 
