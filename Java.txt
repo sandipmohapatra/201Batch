@@ -1545,7 +1545,9 @@ Collection Framework
 It is a collection of Objects.It is data structure in java.
 we have 3 Interfaces
 Tree(Interface) -HashSet,LinkedHashSet,TreeSet(classes)
+we cannot enter duplicate data.
 List(Interface) - HashLinkedList,LinkedList,Stack,Vector,ArrayList (classes)
+we can enter duplicate data.
 Map(Interface) :- HashMap,HashTable (classes)
 
 ------------------------------------------------------------------------------------------
@@ -1643,8 +1645,33 @@ public static void main(String[] args) {
 }
 }
 -----------------------------------------------------------------------------------------------
+wap to create a patient class (regid,name,age,phoneno,address)
 
-
+add it's object into a Linklist and display it
+-----------------------------------------------------------------------------------------------------
+Linked List Example
+-----------------------------
+package collection;
+import java.util.LinkedList;
+public class LinkedListExample 
+{
+public static void main(String[] args) {
+	LinkedList ls=new LinkedList();
+	ls.add(10);
+	ls.add(20);
+	ls.add(10);
+	ls.add(30);
+	ls.add(10);
+	ls.add(40);
+	ls.add("apple");
+	ls.addFirst(100);
+	ls.addLast(200);
+	System.out.println(ls.contains(150));//return boolean value
+	System.out.println(ls.contains(100));
+	System.out.println(ls);
+	}
+}
+--------------------------------------------------------------------------------
 
 
 
