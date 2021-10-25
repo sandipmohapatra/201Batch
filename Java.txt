@@ -1812,10 +1812,54 @@ while(it.hasNext())
 	System.out.println(it.next());
 }}}
 ------------------------------------------------------------------
+Display the elements of the collection
+1)for(Object ob:ls)
+2)System.out.println(ls);
+3)Iterator it=ls.iterator()
+Iterator is a interface.iterator() is a method.
+It has 2 methods i)hasNext() ii)next()
+4)ListIterator()
+In this we can iterate in both directions.
+forward and backward.
+--------------------------------------------------------------------------------
+example-31
+-------------------------
+package collection;
+import java.util.*;
+public class CollectionTest 
+{
+public static void main(String[] args) 
+{
+LinkedList<String> ls=new LinkedList<String>();
+ls.add("banana");
+ls.add("apple");
+ls.add("grapes");
+ls.add("lichi");
+System.out.println(ls);
+System.out.println("*******************************");
+for(Object ob:ls)
+	System.out.println(ob);
+System.out.println("*******************************");
+Iterator it=ls.iterator();
+while(it.hasNext())
+{
+	System.out.println(it.next());
+}
+System.out.println("*******************************");
+ListIterator li=ls.listIterator();
+while(li.hasNext())
+{
+	System.out.println(li.next());
+}
+System.out.println("*******************************");
+while(li.hasPrevious())
+{
+	System.out.println(li.previous());
+}
 
-
-
-
+}
+}
+--------------------------------------------------------------------
 
 
 
