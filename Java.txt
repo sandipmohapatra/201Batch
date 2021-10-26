@@ -1924,14 +1924,80 @@ public static void main(String[] args) {
 	String name=ob.next();
 	hm.put(rollno,name);
 	System.out.println(hm);
-	Set set=hm.entrySet();
+	Set set=hm.entrySet();//HashMap is convereted to set
 	Iterator itr=set.iterator();
     while(itr.hasNext())
     {
-    Map.Entry en=(Map.Entry)itr.next();
+    Map.Entry en=(Map.Entry)itr.next();//set is converted to Map
     System.out.println(en.getKey()+"   "+en.getValue());
 }}}
 ----------------------------------------------------------------------------------------------
+Assignment-3
+-------------------------
+Create a class Bank having accno,name,balance,phoneno
+insert the data and search the data according to slno.
+if you enter a slno it should display all information related to that slno.
+Using HashMap.
+------------------------------------------------------------------------------------
+example:-create 2 classes.
+(1,ob1);
+(2,ob2);
+(3,ob3);
+-----------------------------------------------------
+package Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import javax.swing.text.html.HTMLDocument.Iterator;
+public class BankMap {
+    int accno;
+    String name;
+    int balance;
+    long phone;
+    public BankMap(int accno, String name, int balance, long phone) {
+        super();
+        this.accno = accno;
+        this.name = name;
+        this.balance = balance;
+        this.phone = phone;
+    }
+    @Override
+    public String toString() {
+        return "BankMap [accno=" + accno + ", name=" + name + ", balance=" + balance + ", phone=" + phone + "]";
+    }
+    
+    public static void main(String[] args) {
+        BankMap m = new BankMap(1,"mahesh",2000,9999999);
+        BankMap m1 = new BankMap(2,"ram",2000,9999999);
+        BankMap m2 = new BankMap(3,"roy",2000,9999999);
+        BankMap m3 = new BankMap(4,"mahesh",2000,9999999);
+        
+        HashMap<Integer,BankMap> h = new HashMap<Integer,BankMap>();
+        h.put(1, m);
+        h.put(2, m1);
+        h.put(3, m2);
+        
+        Scanner sc = new Scanner(System.in);
+       System.out.println("enter value for search");
+        int y = sc.nextInt();
+        
+        Set set=h.entrySet();
+        java.util.Iterator itr=set.iterator();
+        while(itr.hasNext())
+        {
+        Map.Entry en=(Map.Entry)itr.next();
+        if( (Integer)en.getKey() == y)
+        {
+            System.out.println(en.getValue());
+        }  
+    }
+    }
+    
+}
+
+-----------------------------------------------------------------------------------------------
+
 
 
 
