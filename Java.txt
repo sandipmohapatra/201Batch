@@ -1544,12 +1544,12 @@ Collection Framework
 --------------------------------------
 It is a collection of Objects.It is data structure in java.
 we have 3 Interfaces
-Tree(Interface) -HashSet,LinkedHashSet,TreeSet(classes)
+Set(Interface) -HashSet,LinkedHashSet,TreeSet(classes)
 we cannot enter duplicate data.
 List(Interface) - HashLinkedList,LinkedList,Stack,Vector,ArrayList (classes)
 we can enter duplicate data.
 Map(Interface) :- HashMap,HashTable (classes)
-
+we have key and value pair.Key cannot be duplicate.
 ------------------------------------------------------------------------------------------
 1)TreeSet :- It display the data in shorted Order.
 example :-
@@ -1892,8 +1892,46 @@ public static void main(String[] args) {
 }
 }
 -------------------------------------------------------------
+*The main purpose of using Set in HashMap is we don't have the Iterator interface for HashMap.
+-------------------------------------------------------------------  
 
+HashMap :- in this we enter key and value pair.
+Set set=hm.entrySet(); //HashMap is converted to set we have entrySet() in HashMap .
 
+     Iterator itr=set.iterator();
+     while(itr.hasNext())
+     {
+     Map.Entry en=(Map.Entry)itr.next();//typecasting the next() element with Map.Entry 
+     System.out.println(en.getKey()+"   "+en.getValue());//Map.Entry has 2 methods getKey() and getValue()
+-----------------------------------------------------------------------
+Example-32
+------------------------
+import java.util.*;
+public class HashMapExample 
+{
+public static void main(String[] args) {
+	HashMap<Integer,String> hm=new HashMap<Integer,String>();
+	hm.put(1, "Abhinav");
+	hm.put(2, "Anna");
+	hm.put(3, "Aditya");
+	hm.put(4, "Kundan");
+	hm.put(5, "Riya");
+	hm.put(5, "prathyusha");
+	System.out.println(hm);
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno and name");
+	int rollno=ob.nextInt();
+	String name=ob.next();
+	hm.put(rollno,name);
+	System.out.println(hm);
+	Set set=hm.entrySet();
+	Iterator itr=set.iterator();
+    while(itr.hasNext())
+    {
+    Map.Entry en=(Map.Entry)itr.next();
+    System.out.println(en.getKey()+"   "+en.getValue());
+}}}
+----------------------------------------------------------------------------------------------
 
 
 
