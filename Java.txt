@@ -1945,11 +1945,7 @@ example:-create 2 classes.
 (3,ob3);
 -----------------------------------------------------
 package Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import javax.swing.text.html.HTMLDocument.Iterator;
+import java.util.*;
 public class BankMap {
     int accno;
     String name;
@@ -1997,7 +1993,14 @@ public class BankMap {
 }
 
 -----------------------------------------------------------------------------------------------
-
+Assignment - 4
+----------------------
+In a cruise there are 3 types of tickets.
+1)crew member :- free
+2)Adult above 10 years:- Rs 500
+3)Children below 10 years :-Rs 250
+Enter details of all the passengers and count no of crew members ,Adult and children traveling .
+Also display the details of all the travellers.Using HashMap.
 
 
 
