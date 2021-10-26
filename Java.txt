@@ -2001,8 +2001,54 @@ In a cruise there are 3 types of tickets.
 3)Children below 10 years :-Rs 250
 Enter details of all the passengers and count no of crew members ,Adult and children traveling .
 Also display the details of all the travellers.Using HashMap.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Multi-Threading
+-------------------------
+Till now we have done single threaded programing .Like program with one main().There is single flow of control.The control start excecuting from the main method and flow till the end.
 
+In Multi-threaded programing we have start() and run().At a time all the start methods will start exceuting.
+The processer will give some time to each start().There is time sharing between all the start().
+The start() will call the run().
+--------------------------------------------------------------------------
+example-1
+------------------
+package ThreadExample;
 
+public class ThreadEx1 extends Thread
+{
+public void run()
+{
+	try
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(i);
+			sleep(1000);
+		}
+	}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+		System.out.println(ae);
+	}
+}
+}
+--------------------------------------------------
+package ThreadExample;
+
+public class MainThread 
+{
+public static void main(String[] args) 
+{
+ThreadEx1 ob1=new ThreadEx1();
+ThreadEx2 ob2=new ThreadEx2();
+ThreadEx3 ob3=new ThreadEx3();
+ob1.start(); 
+ob2.start(); 
+ob3.start();
+}
+}
+-------------------------------------------------- 
 
 
 
