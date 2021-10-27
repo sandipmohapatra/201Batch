@@ -2349,6 +2349,44 @@ class Second implements Runnable
 		t3.start();
 	}}
 ---------------------------------------------------------
+Example-7
+---------------------
+package ThreadExample;
+class First implements Runnable
+{
+	int available=2;
+	synchronized public void run()
+	{	
+		try	
+		{
+		Thread t=Thread.currentThread();
+		String name=t.getName();
+		if(available>0)
+		{
+			System.out.println(name+"  got the ticket");
+			System.out.println("ticket printing.......");
+			Thread.sleep(2000);
+			available=available-1;
+		}
+		else
+		{	System.out.println(name+"   sorry no ticket....");	}
+
+	}catch(Exception e){}	
+		}
+	public static void main(String args[]) throws Exception
+	{ 
+		First obj=new First();
+		Thread t1=new Thread(obj,"Surya");
+		Thread t2=new Thread(obj,"Kiran");
+		Thread t3=new Thread(obj,"Yash");
+		t1.start();       t2.start();       t3.start();
+	}
+}
+------------------------------------------------------------
+wap to have a bike race.
+3 students have a bike race .check who win.
+using thread.
+-------------------------------------------------------------
 
 
 
