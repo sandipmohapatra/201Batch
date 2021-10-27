@@ -2144,7 +2144,36 @@ obj2.start();
 Thread.currentThread().getName() 
 7)JVM will allocate the first thread as Thread-0
 ----------------------------------------------------------------------------
-
+Example-1
+--------------------
+package ThreadExample;
+class Theadprg1 extends Thread 
+{
+public void run()
+{
+	for(int i=1;i<=10;i++)
+	{
+		System.out.println(i);
+		try {
+			sleep(1000);
+		} catch (InterruptedException e) {
+						e.printStackTrace();
+		}
+	}
+}
+	public static void main(String[] args) 
+	{
+		Theadprg1 obj=new Theadprg1();
+		Theadprg1 obj1=new Theadprg1();
+		Theadprg1 obj2=new Theadprg1();
+		System.out.println(obj.isAlive());
+	obj.start();
+	obj1.start();
+	obj2.start();
+	System.out.println(obj.isAlive());
+			}
+}
+-----------------------------------------------------------------
 
 
 
