@@ -2570,8 +2570,8 @@ directory.
 
 12)boolean mkdir():-this method create the directory .
 
-example:-
-
+example 1:-
+-------------------------
 import java.io.*;
 class FileDemo
 {
@@ -2591,7 +2591,27 @@ System.out.println("file isdirectory:"+f.isDirectory());
 System.out.println("file length:"+f.length());
 }}}   
 ----------------------------------------------------------------------------------------------------------------
-
+OutputStream :- Is used to write data into the file.This will automatically create a new file.
+InputStream is for reading data.
+----------------------------------------
+example-2
+---------------------
+import java.io.*;
+class Second
+{   
+	public static void main(String args[]) throws IOException 
+	{
+	DataInputStream dis=new DataInputStream(System.in);//input from the keyboard or read from the keyboard
+	FileOutputStream fos=new FileOutputStream("pqr.doc");//output to a file or write into the file.
+	System.out.println("enter the text");
+	int ch;
+	while((ch=dis.read())!='\n')
+	{
+		fos.write(ch);
+	}
+	fos.close();
+	}}
+-------------------------------------------------------------------------
 
 
 
