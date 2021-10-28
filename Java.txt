@@ -2650,7 +2650,24 @@ System.out.println("enter the emp name"+name);
 System.out.println("enter the emp sal"+sal);
  }}
 ------------------------------
-
+Example-5
+-----------------
+import java.io.*;
+class g
+{   
+public static void main(String args[]) throws Exception
+{
+FileReader fr=new FileReader("somya.txt");//read data in character format
+BufferedReader br=new BufferedReader(fr);
+String name;
+while((name=br.readLine())!=null)//null is EOF in character stream
+{
+System.out.print(name);
+}
+fr.close();
+br.close();
+}}
+----------------------------------------------
 
 
 
