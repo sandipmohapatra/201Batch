@@ -2621,7 +2621,7 @@ class d
      public static void main(String args[]) throws Exception
       {
 FileInputStream fis=new FileInputStream("First.txt");//read the data from the file. 
-FileOutputStream fos=new FileOutputStream("demo2.doc");//write the data from the file.
+FileOutputStream fos=new FileOutputStream("demo2.doc");//write the data to the file.
 int ch;
 while((ch=fis.read())!=-1)//-1 indicates the end of the file.
 {
@@ -2631,7 +2631,25 @@ fis.close();fos.close();
 System.out.println("file copied.....");
  }}
 ----------------------------------------------------------------------------
-
+Example-4
+-----------------------------------
+import java.io.*;
+class f
+{   
+     public static void main(String args[]) throws Exception
+      {
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+System.out.println("enter the empid");
+int emp=Integer.parseInt(br.readLine());
+System.out.println("enter the emp name");
+String name=br.readLine();
+System.out.println("enter the emp sal");
+float sal=Float.parseFloat(br.readLine());
+System.out.println("enter the empid"+emp);
+System.out.println("enter the emp name"+name);
+System.out.println("enter the emp sal"+sal);
+ }}
+------------------------------
 
 
 
