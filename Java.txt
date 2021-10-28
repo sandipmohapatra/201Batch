@@ -2743,12 +2743,39 @@ catch(ClassNotFoundException c)
     }
 }
 
------------------------------------------------------------------------------------
+-------------------------------------Assignment -3 ----------------------------------------------
+wap to create student class.Give dynamic input.
+Having rollno,name,address,phoneno,email
+and store it into a file using Serialization.
+Use Deserialization to read the data.
 
-
-
-
-
+---------------------------------------------------------------------------------
+JDBC
+Example-1
+-----------------------
+package sql;
+import java.sql.*;
+public class First 
+{
+public static void main(String[] args)throws Exception
+{
+	try
+	{
+		//1.to load the driver and create memory block in that driver is loaded
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		//2.database name,username,password
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+		//3.
+		Statement st=con.createStatement();
+		//4.to exceute a querry
+		st.execute("insert into mphasis201batch values(101,'somya','bangalore')");
+		System.out.println("row inserted");
+	}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+	}}}
+--------------------------------------------------------------------------------------------------------
 
 
 
