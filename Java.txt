@@ -2776,6 +2776,60 @@ public static void main(String[] args)throws Exception
 		ae.printStackTrace();
 	}}}
 --------------------------------------------------------------------------------------------------------
+oracle(ascii code)----------driver(thick/thin)---------------java(byte code)
+we are adding the jar file to our project
+---------------------------
+package sql;
+import java.sql.*;
+public class First 
+{
+public static void main(String[] args)throws Exception
+{
+	try
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+		Statement st=con.createStatement();
+	//st.execute("create table mphasis202(empno number,name varchar2(30),address varchar2(30))");
+	//	System.out.println("table created");
+	   st.execute("insert into mphasis202 values(101,'somya','bangalore')");
+	   System.out.println("row inserted");
+	 //	   st.execute("update mphasis202 set name='kundan' where empno=101");
+	//   System.out.println("row updated");
+	//	st.execute("delete from mphasis202 where empno=101");
+		// System.out.println("row deleted");
+ 	ResultSet rs=st.executeQuery("select * from mphasis202");
+	   while(rs.next())
+	   {
+		   System.out.println(rs.getString(1)+" "+rs.getString(2)+"  "+rs.getString(3));
+	   }
+	}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+	}}}
+
+--------------------------------------------------
+ResultSet rs :- it used to store multiple rows.The cursor will move down by while(rs.next()).
+executeQuery() is used  for select querry.
+
+ System.out.println(rs.getString(1)+" "+rs.getString(2)+"  "+rs.getString(3));
+
+1 ,2 ,3 indicate the column no.
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
