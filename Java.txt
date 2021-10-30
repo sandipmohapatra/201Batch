@@ -3295,9 +3295,53 @@ public class NewClass
     }
 } 
 --------------------------------------------------------------------------------------
-
-
-
+There are 4 tpypes of drivers
+3 are thick driver--->odbc a third party driver in between.
+1 thin driver --->the driver is present in the s/w .It is faster so we use max.
+----------------------------------------------------------------------------
+we have 
+1)execute() :-insert,update,delete
+2)executeQuery():- select
+3)executeUpdate():-insert,update,delete .This return 0(fail) or 1(success).
+------------------------------------------------------------------------------
+1)Statement() :- for static query
+2)PreparedStatement():-dynamic query
+3)CallableStatement():-procedure and function
+---------------------------------------------------------------------------------------------
+ResultSet rs -----This is used to store the total table into the single variable.
+we have to iterate the data by using while(rs.next()).
+---------------------------------------------------------------------------------------------
+Callable statement
+-----------------------------------
+example-1
+---------------------
+package sql;
+import java.sql.*;
+class SqlTest
+{
+public static void main(String arg[])throws Exception
+{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+CallableStatement st=con.prepareCall("{call addition(?,?,?)}");
+st.setInt(1,30);
+st.setInt(2,20);
+st.registerOutParameter(3,Types.INTEGER);
+st.execute();
+int n=st.getInt(3);
+System.out.println("The result is "+n);
+}
+}
+------------------------------------------------------------------
+Procedure:-
+-------------------------
+ create or replace procedure addition(i IN number,j IN number,K OUT number) is
+ begin K:=i+j; 
+ end;
+----------------------------------------------------------------------------------------------------------
+step 1:- create procedure in oracle
+step 2:- call procedure through Java using CallableStatement().
+-------------------------------------------------------------------
 
 
 
