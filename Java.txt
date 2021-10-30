@@ -3224,8 +3224,77 @@ fin=new FileInputStream(args[0]);
 
 ans:- TypeCast Error
 --------------------------------------------------------------------------------------------
+//Type Casting :- 1)Implicit 2)Explicit
 
+package batch201;
+public class Test201 
+{
+public static void main(String[] args) 
+{//implicit type casting :- smaller memory size is converted to bigger memory size.
+	byte a=10; //1 byte
+	int b=a;//4 byte
+	System.out.println("the value of b is "+b);
+}
+}
+---------------------------------------------------------------------------------------
+//Type Casting :- 1)Implicit 2)Explicit
 
+package batch201;
+public class Test201 
+{
+public static void main(String[] args) 
+{//explicit type casting :- bigger memory size is converted to smaller memory size.
+	int a=10; //1 byte
+	byte b=(byte) a;//4 byte
+	System.out.println("the value of b is "+b);
+}
+}
+------------------------------------------------------------------------------------------------
+ArrayCopy :-
+-----------------------
+package batch201;
+public class NewClass
+{
+    public static void main(String[] args)
+    {
+        int s[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        int d[] = { 15, 25, 35, 45, 55, 65, 75, 85, 95, 105};
+  
+        int source_arr[], sourcePos, dest_arr[], destPos, len;
+        source_arr = s;
+        sourcePos = 3;
+        dest_arr = d;
+        destPos = 1;
+        len = 4;
+  
+        // Print elements of source
+        System.out.print("source_array : ");
+        for (int i = 0; i < s.length; i++)
+            System.out.print(s[i] + " ");
+        System.out.println("");
+  
+        System.out.println("sourcePos : " + sourcePos);
+         
+        // Print elements of source
+        System.out.print("dest_array : ");
+        for (int i = 0; i < d.length; i++)
+            System.out.print(d[i] + " ");
+        System.out.println("");
+         
+        System.out.println("destPos : " + destPos);
+         
+        System.out.println("len : " + len);
+         
+        // Use of arraycopy() method
+        System.arraycopy(source_arr, sourcePos, dest_arr,destPos, len);
+         
+        // Print elements of destination after
+        System.out.print("final dest_array : ");
+        for (int i = 0; i < d.length; i++)
+            System.out.print(d[i] + " ");
+    }
+} 
+--------------------------------------------------------------------------------------
 
 
 
