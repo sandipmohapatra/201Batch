@@ -3342,7 +3342,54 @@ Procedure:-
 step 1:- create procedure in oracle
 step 2:- call procedure through Java using CallableStatement().
 -------------------------------------------------------------------
-
+example-2
+--------------------
+import java.sql.*;
+class SqlTest
+{
+public static void main(String arg[])throws Exception
+{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+CallableStatement st=con.prepareCall("{call addition(?,?,?,?,?,?)}");
+st.setInt(1,30);
+st.setInt(2,20);
+st.setInt(3,10);
+st.setInt(4,40);
+st.setInt(5,50);
+st.registerOutParameter(6,Types.INTEGER);
+st.execute();
+int n=st.getInt(6);
+System.out.println("The result is "+n);
+}
+}
+----------------------------------------------------------
+create or replace procedure avgof5(i IN number, j IN number, k IN number, l IN number, m IN number, N OUT number) is
+ begin N:=(i+j+k+l+m)/5; 
+ end;
+------------------------------------------------------------------
+example-3
+-------------------------
+import java.sql.*;
+class SqlTest2
+{
+public static void main(String arg[])throws Exception
+{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+CallableStatement cs=con.prepareCall("{call dept_pro}");
+cs.execute();
+}
+}
+-------------------------------------------------------------------------------------------
+/*
+ * create or replace procedure dept_pro 
+ * as
+ * begin 
+ * delete from dept where deptno=50; 
+ * end;
+ */
+--------------------------------------------------------------------------------------------------
 
 
 
