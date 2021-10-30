@@ -3382,23 +3382,41 @@ cs.execute();
 }
 }
 -------------------------------------------------------------------------------------------
-/*
- * create or replace procedure dept_pro 
- * as
- * begin 
- * delete from dept where deptno=50; 
- * end;
- */
+ create or replace procedure dept_pro 
+ as
+ begin 
+ delete from dept where deptno=50; 
+ end;
 --------------------------------------------------------------------------------------------------
+example-4
+--------------------------
+import java.sql.*;
+class SqlTest1
+{
+public static void main(String arg[])throws Exception
+{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+CallableStatement cs=con.prepareCall("{?=call add_pro(?,?)}");
+cs.registerOutParameter(1,Types.INTEGER);
+cs.setInt(2,11);
+cs.setInt(3,22);
+cs.execute();
+int n=cs.getInt(1);
+System.out.println("the result is "+n);
+}
+}
+-----------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
+/*
+ create or replace function add_pro(i IN number,j IN number)return number is
+K number;
+begin
+k:=i+j;
+return K;
+end;
+ */
+------------------------------------------------------------------------------------------------------------------------------
 
 
 
