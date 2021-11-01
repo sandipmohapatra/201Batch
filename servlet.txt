@@ -1,0 +1,60 @@
+Servlet
+-----------------
+It is a server side program.
+There are 2 type servlet
+1)GenericServlet
+2)HttpServlet
+In servlet we don't have the main method.
+we have lifecycle method.
+1)init():- Memory block created.(1 time during starting of program.)
+2)service():- It works for n no of times.It takes the request form the client and give response.
+3)destroy() :- Memory block released.(1 time during closing the program)
+-------------------------------------------------------------------------------------------------------
+Example-1
+--------------------
+<html>
+<body bgcolor=cyan>
+<form action=Second>
+<h1><center>Employee Registration Page</center></h1><hr>
+<table>
+<tr><td>Enter your name<td><input type=text name=t1 size=20></tr>
+<tr><td>Enter your phoneno<td><input type=text name=t2 size=20></tr>
+<tr><td>Enter your email<td><input type=text name=t3 size=20></tr>
+<tr><td>Enter your address<td><input type=text name=t4 size=20></tr>
+<tr><td>Enter your age<td><input type=text name=t5 size=20></tr>
+<tr><td><td><input type=submit value=submit></tr>
+</table>
+</form>
+</body>
+</html>
+-------------------------------------------------------------------
+import javax.servlet.*;
+import java.io.*;
+import javax.servlet.annotation.WebServlet;
+@WebServlet("/Second")
+public class Second extends GenericServlet
+{
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException 
+	{
+	PrintWriter pw=res.getWriter();
+	res.setContentType("text/html");
+	String a=req.getParameter("t1");
+	String b=req.getParameter("t2");
+	String c=req.getParameter("t3");
+	String d=req.getParameter("t4");
+	String e=req.getParameter("t5");
+	pw.println("the name is "+a);
+	pw.println("the phone no is "+b);
+	pw.println("the email is "+c);
+	pw.println("the address is "+d);
+	pw.println("the age is "+e);
+	}
+}
+------------------------------------------------------------------------------------------------------
+wap in servlet to create  a calculator.
+------------------------------------------------------------
+*When retriving the value from the HTML page it is in the form of Text.
+Convert it into integer.
+Integer.parseInt();
+---------------------------------------------------------------------------------------------------
