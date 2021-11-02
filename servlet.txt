@@ -393,9 +393,41 @@ Uses:-
 2)database need to be loaded on startup and saved while shut down.
 
 -------------------------------------------------------------------------------------------------------------
-
-
-
+example-4
+----------------------
+<html>
+<body bgcolor=cyan>
+<form action="Second" method=get>
+<h1><center>Employee Login Page</center></h1><hr>
+<table>
+<tr><td>Enter  Username<td><input type=text name=t1 size=20></tr>
+<tr><td>Enter  password<td><input type=password name=t2 size=20></tr>
+<tr><td><td>
+<input type=submit value="Login" ></tr>
+</table></form></body></html>
+----------------------------------------------
+import javax.servlet.*;
+import java.io.*;
+import java.sql.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+@WebServlet("/Second")
+public class Second extends HttpServlet {
+			@Override
+	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		String a=req.getParameter("t1");
+		String b=req.getParameter("t2");
+		if(a.equals("sandip")&& b.equals("1234"))
+	res.sendRedirect("success.html");
+		else
+			res.sendRedirect("Login.html");
+	}			}
+-------------------------------------------------success.html--------------------------------
+<h1>Successfully login</h1>
+-----------------------------------------------------------
 
 
 
