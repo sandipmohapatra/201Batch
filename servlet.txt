@@ -58,3 +58,161 @@ wap in servlet to create  a calculator.
 Convert it into integer.
 Integer.parseInt();
 ---------------------------------------------------------------------------------------------------
+Example-2
+----------------------
+<html>
+<body bgcolor=cyan>
+<h1><center>Calculator</center></h1><hr>
+<table>
+<tr><td>Enter a number<td><input type=text name=t1 size=20></tr>
+<tr><td>Enter a number<td><input type=text name=t2 size=20></tr>
+<tr><td><td>
+<input type=submit value="ADD" name=b1>
+<input type=submit value="SUB" name=b1>
+<input type=submit value="MUL" name=b1>
+<input type=submit value="DIV" name=b1></tr>
+</table></body></html>
+------------------------------------------------
+import javax.servlet.*;
+import java.io.*;
+import javax.servlet.annotation.WebServlet;
+@WebServlet("/Second")
+public class Second extends GenericServlet {
+            @Override
+    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        String a=req.getParameter("t1");
+        String b=req.getParameter("t2");
+        String c=req.getParameter("b1");
+        pw.println("<h1><center>Calculator Result</center><h1><hr>");
+        pw.print("the no is "+a);
+        pw.println("<br><br>");
+        pw.print("the no is "+b);
+        pw.println("<br><br>");
+        pw.print("the button is "+c);
+        pw.println("<br><br>");
+        if(c.equals("ADD"))
+        {
+            pw.println("The Result is "+(Integer.parseInt(a)+Integer.parseInt(b)));
+        }
+        else if(c.equals("SUB"))
+        {
+            pw.println("The Result is "+(Integer.parseInt(a) - Integer.parseInt(b)));
+            
+        }
+        else if(c.equals("MUL"))
+{
+            pw.println("The Result is "+(Integer.parseInt(a)*Integer.parseInt(b)));
+            
+        }
+        else 
+        {
+            pw.println("The Result is "+(Integer.parseInt(a)/Integer.parseInt(b)));
+            
+        }            }            }
+------------------------------------------------------------------
+Example-3
+-------------------------
+<html>
+<body bgcolor=cyan>
+<form action="Second">
+<h1><center>Employee Registration Page</center></h1><hr>
+<table>
+<tr><td>Enter  empid<td><input type=text name=t1 size=20></tr>
+<tr><td>Enter  name<td><input type=text name=t2 size=20></tr>
+<tr><td>Enter salary<td><input type=text name=t3 size=20></tr>
+<tr><td>Enter deptno<td><input type=text name=t4 size=20></tr>
+
+<tr><td><td>
+<input type=submit value="Insert" name=b1>
+<input type=submit value="Update" name=b1>
+<input type=submit value="Delete" name=b1>
+<input type=submit value="Select" name=b1></tr>
+</table></form></body></html>
+-------------------------------------------------------
+import javax.servlet.*;
+import java.io.*;
+import java.sql.*;
+import javax.servlet.annotation.WebServlet;
+@WebServlet("/Second")
+public class Second extends GenericServlet {
+			@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		String a=req.getParameter("t1");
+		String b=req.getParameter("t2");
+		String c=req.getParameter("t3");
+		String d=req.getParameter("t4");
+		
+		String but=req.getParameter("b1");
+		pw.println("<h1><center>Employee Data</center><h1><hr>");
+		pw.print("Empid  is "+a);
+		pw.println("<br><br>");
+		pw.print("Name is "+b);
+		pw.println("<br><br>");
+		pw.print("Salary is "+c);
+		pw.println("<br><br>");
+		pw.print("Dept no is "+d);
+		pw.println("<br><br>");
+		
+		pw.print("the button is "+but);
+		pw.println("<br><br>");
+		try
+		{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+		if(but.equals("Insert"))
+		{
+			 PreparedStatement ps=con.prepareStatement("insert into employee201 values(?,?,?,?)");
+			ps.setInt(1,Integer.parseInt(a));
+			ps.setString(2,b);
+			ps.setInt(3,Integer.parseInt(c));
+			ps.setInt(4,Integer.parseInt(d));
+			ps.execute();
+			pw.print("row inserted");
+		}
+		else if(but.equals("Update"))
+		{
+			PreparedStatement ps=con.prepareStatement("update employee201 set name=?,salary=?,deptno=? where empid=?");
+			ps.setString(1,b);
+			ps.setInt(2,Integer.parseInt(c));
+			ps.setInt(3,Integer.parseInt(d));
+			ps.setInt(4,Integer.parseInt(a));
+			ps.execute();
+			pw.print("row updated");
+			
+		}
+		else if(but.equals("Delete"))
+		{
+			 
+			PreparedStatement ps=con.prepareStatement("delete employee201 where empid=?");
+			ps.setInt(1,Integer.parseInt(a));
+			ps.execute();
+			pw.print("row deleted");
+		}
+		else 
+		{
+			 
+			
+		}		
+		}
+		catch(Exception ae)
+		{
+			ae.printStackTrace();
+		}		}			}
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
