@@ -3403,20 +3403,33 @@ cs.setInt(2,11);
 cs.setInt(3,22);
 cs.execute();
 int n=cs.getInt(1);
-System.out.println("the result is "+n);
-}
-}
+System.out.println("the result is "+n);}}
 -----------------------------------------------------------------------------------------------------------------------
-
-/*
  create or replace function add_pro(i IN number,j IN number)return number is
 K number;
 begin
 k:=i+j;
 return K;
 end;
- */
 ------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
