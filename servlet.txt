@@ -428,12 +428,61 @@ public class Second extends HttpServlet {
 -------------------------------------------------success.html--------------------------------
 <h1>Successfully login</h1>
 -----------------------------------------------------------
+GenericServlet /vs HttpServlet
+----------------------------------------------
+genericServlet is protocal independent.
+It can handle any type of protocal.
+------------------------------------------------------
+HttpServlet is protocal dependent.
+Our Internet works with Http Protocal.
+we have variour methods within HttpProtocal.
+1)SendRedirect()
+2)RequestDispatcher() ---include(),forward()
+classes :- session,cookies etc.
+------------------------------------------------------------------------
+JSP :- Java server pages .It will automatically convert the JSP page into servlet.
+Code will be less compared to servlet.
+-----------------------
+example-1
+------------------
+<html>
+<body bgcolor=cyan>
+<form action="Second.jsp" method=get>
+<h1><center>Employee Registration Page</center></h1><hr>
+<table>
+<tr><td>Enter  name<td><input type=text name=t1 size=20></tr>
+<tr><td>Enter  password<td><input type=password name=t2 size=20></tr>
+<tr><td>Enter  Address<td><input type=text name=t3 size=20></tr>
+<tr><td>Enter  Email<td><input type=text name=t4 size=20></tr>
+<tr><td>Enter  Phoneno<td><input type=text name=t5 size=20></tr>
+<tr><td>Enter  Age<td><input type=text name=t6 size=20></tr>
+<tr><td><td><input type=submit value="Register" ></tr>
+</table>
+</form>
+</body>
+</html>
+------------------------------------------------------------------------------------
+Second.jsp
+----------------------
+<%String a=request.getParameter("t1");
+String b=request.getParameter("t2");
+String c=request.getParameter("t3");
+String d=request.getParameter("t4");
+String e=request.getParameter("t5");
+String f=request.getParameter("t6");%>
 
-
-
-
-
-
+<%out.println("Name is "+a);
+out.println("<br>");
+out.println("Password is "+b);
+out.println("<br>");
+out.println("Address is "+c);
+out.println("<br>");
+out.println("Email is "+d);
+out.println("<br>");
+out.println("Phoneno is "+e);
+out.println("<br>");
+out.println("Age is "+f);%>
+---------------------------------------------------------------------
 
 
 
