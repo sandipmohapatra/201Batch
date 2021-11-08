@@ -557,7 +557,7 @@ backend using oracle.
 3)The jsp code is converted to servlet when it runs internally.
 4)in jsp we have jsp action tags and implicit objects.
 5)jsp will take more time than servlet.
-6)there are 4 scopes:- 1)request 2)session 3)response 4)Application
+6)there are 4 scopes:- 1)request 2)session 3)page 4)Application
 
 jsp life cycle :-
 ------------------------
