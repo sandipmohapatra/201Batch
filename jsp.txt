@@ -75,23 +75,16 @@ second.jsp
       <br>
       the username is=<%=user%>
 -----------------------------------------------------------------------
-
-
-// page  Directive
-<%@page language="java"%>
-<%@page buffer="16kb"%>
-<%@page buffer="16kb" autoFlush="false"%>
-<%@page session="true" %>
-<%@page import="java.util.*;"%>
-<%
-Date d=new Date();
-out.println(d);
-out.println(d.getMonth());
-%>
-
-
-
-
+<%@ page import="java.util.*"%>
+<h1>This is a Automatic clock</h1><hr>
+<% response.setIntHeader("Refresh",5);
+Calendar cal=new GregorianCalendar();
+String x;
+int hour=cal.get(Calendar.HOUR);
+int min=cal.get(Calendar.MINUTE);
+int sec=cal.get(Calendar.SECOND);
+x=hour+":"+min+":"+sec;
+out.println("the time is "+x);%>
 
 -----------------------------
 first.html
