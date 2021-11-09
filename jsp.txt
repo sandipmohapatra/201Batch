@@ -76,15 +76,22 @@ second.jsp
       the username is=<%=user%>
 -----------------------------------------------------------------------
 <%@ page import="java.util.*"%>
-<h1>This is a Automatic clock</h1><hr>
+<h1><center>This is a Automatic clock</center></h1><hr>
 <% response.setIntHeader("Refresh",5);
 Calendar cal=new GregorianCalendar();
-String x;
+String x,y;
 int hour=cal.get(Calendar.HOUR);
 int min=cal.get(Calendar.MINUTE);
 int sec=cal.get(Calendar.SECOND);
+int day=cal.get(Calendar.DAY_OF_MONTH);
+int month=cal.get(Calendar.MONTH)+1;
+int year=cal.get(Calendar.YEAR);
+
 x=hour+":"+min+":"+sec;
-out.println("the time is "+x);%>
+y=day+"/"+month+"/"+year;
+out.println("The time is "+x);
+out.println("The date is "+y);
+%>
 
 -----------------------------
 first.html
