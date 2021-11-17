@@ -24,7 +24,7 @@ Hibernate
 9) We need not do query tuning in case of hibernate.
 10) Development and maintenance is very easy because we need not to write queries.
 
-
+----------------------------------------------------------------------------------------------------------------
 
 Generator classes
 It is used to generate identifier column values. The first is generally called identifier column.
@@ -63,7 +63,7 @@ The different generator classes are:-
 16)session.get():-it is similar to session.load() to retrieve data from database.
 If there is no record in the database get() return null where as load() throws Exception.
 
-
+-----------------------------------------------------------------------------------------------------
 HQL (Hibernate Query Language)
 1)HQL is similar to sql but the difference is we have to give pojo name and property name, instead of table name and column name.
 2)HQL queries are database independent.
@@ -78,7 +78,7 @@ Example:-
 5)Order by:-from student s where s.studentname:=sname order by s.studentno asc;
 6)and – or :- from student s where s.studentid>:sid and/or s.studentage:=sage;
 We can use named parameter (:sno) instead of positional parameter(?);
-
+---------------------------------------------------------------------------------------
 
 Criteria :-
 1)in criteria we never write the query we build the query using some method.
