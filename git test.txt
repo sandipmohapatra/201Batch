@@ -1,0 +1,54 @@
+version control tool
+---------------------------------------------------------------------------------------
+step-1)link your remote repository to local reposritory
+git remote add origin "https://github.com/Tusharsen17/tushar82"
+--------------------------------------------------------------------------------------
+step-2)pull the data from remote repository
+git pull origin master/main
+-------------------------------------------------------------------------------------
+step-3)create files in master
+vi test1.txt
+Esc ,:wq
+--------------------------------------
+step-4)to see the list of files
+ls -l
+to see the content of the file
+cat <filename>
+----------------------------------------
+step-5)git status
+----------------------------------------
+to add to index all the files created
+step-6)git add <filename>
+---------------------------------------------
+save all the files
+step-7)git commit -m "message"
+---------------------------------------------------
+create some braches branches
+step-8)git branch firstbranch
+git branch secondbranch
+git branch thirdbranch
+---------------------------------------------------------
+step-9)to switch to that branch
+git checkout firstbranch
+------------------------------------------------------------
+step-10)create file in each banches one by one
+git add <filename>
+git commit -m "message"
+-----------------------------------------------
+step-11)merge firstbranch to master
+merge secondbranch to master
+merge thirdbranch to master
+*stay at master
+*git rebase firstbranch
+*git rebase secondbranch
+*git rebase thirdbranch
+-------------------------------------------------------------
+push changes to remote repository
+--------------------------------------------------
+the files from local master will be stored into the remote repository
+------------------------------------------------------------------------------------------
+step-1)ssh-keygen
+step-2)cat   /c/Users/sandip/.ssh/id_rsa.pub
+step-3)ssh -T git@github.com
+step-4)git push origin master
+-----------------------------------------------------------------------------------------------------
