@@ -30,7 +30,7 @@ select (Gitbash here)
 a cmd prompt will open
 -------------------------------------
 3)to link the local repository to remote repository 
--> git remote add origin "https://github.com/LaxmiPriyaS/git_github1.git"
+-> git remote add origin "https://github.com/sandipmohapatra/lgstudents"
 
 -------------------------------------------------------------------
 4)to pull the data from remote repository
